@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   Renderer2,
+  signal,
   ViewChild,
 } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
