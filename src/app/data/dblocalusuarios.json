@@ -1,0 +1,50 @@
+[
+  {
+  "nombre": "Alexis Perez",
+    "rut": "21.450.272-0",
+    "carrera": "Ingeniería en Informática",
+    "proyectos": ["Brazo Robótico", "Impresora 3D", "Brazo Robótico","Brazo Robótico", "Impresora 3D", "Brazo Robótico","Brazo Robótico", "Impresora 3D", "Brazo Robótico","Brazo Robótico"],
+    "cargo": "Integrante",
+    "email": "alexis.perez@inacap.cl"
+  },
+  {
+    "nombre": "Cote Gutierrez",
+    "rut": "21.234.314-0",
+    "carrera": "Diseño Digital",
+    "proyectos": [],
+    "cargo": "Líder del laboratorio",
+    "email": "cote.gutierrez@inacap.cl"
+  },
+  {
+    "nombre": "Nicolas Escobar",
+    "rut": "20.777.543-2",
+    "carrera": "Automatización y Robótica",
+    "proyectos": [],
+    "cargo": "Líder del laboratorio",
+    "email": "nicolas.escobar@inacap.cl"
+  },
+  {
+    "nombre": "Sandy Sandoza",
+    "rut": "20.123.456-7",
+    "carrera": "Ingeniería Industrial",
+    "proyectos": ["Impresora 3D", "Brazo Robótico"],
+    "cargo": "Integrante",
+    "email": "sandy.sandoza@inacap.cl"
+  },
+  {
+    "nombre": "Jorge Baras",
+    "rut": "10.345.678-1",
+    "carrera": "Ingeniería Electrónica",
+    "proyectos": ["Brazo Robótico"],
+    "cargo": "Profesor a cargo",
+    "email": "javier.morales@inacap.cl"
+  },
+  {
+    "nombre": "Daniel Ronceros",
+    "rut": "21.987.654-3",
+    "carrera": "Diseño Digital",
+    "proyectos": [],
+    "cargo": "Integrante",
+    "email": "daniel.rojas@inacap.cl"
+  }
+]

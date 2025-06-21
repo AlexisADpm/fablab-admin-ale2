@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'all-users',
+  selector: 'dashboard',
   imports: [],
-  templateUrl: './all-users.component.html',
+  templateUrl: './dashboard.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AllUsersComponent {}
+export class DashboardComponent {}
