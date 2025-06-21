@@ -1,12 +1,12 @@
-<div class="flex h-screen">
+<div class="flex h-screen overflow-x-hidden">
   <!-- Sidebar -->
   <aside
-    class="w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col"
+    class="w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col transition-all duration-300 transform"
     #sideMenu
   >
-    <div class="p-5 text-lg font-bold">Panel de Administración</div>
-    <button class="btn" (click)="hideContent()">hide menu</button>
-    <nav class="flex-1 space-y-2 px-4 gap-5">
+    <img src="../../assets/icons/menuIcon.png" class="cursor-pointer w-[50px] h-[50px] hover:bg-gray-400/10 hover:rounded mt-5 ml-5" (click)="hideContent()"><img>
+    <nav class="flex-1 space-y-2 px-4 gap-5 transition-all duration-300 mt-5" #navItems>
+      <div class="p-5 text-lg font-bold mb-5 w-full">Panel de Administración</div>
       <a
         routerLink="/proyectos"
         routerLinkActive="bg-purple-900"

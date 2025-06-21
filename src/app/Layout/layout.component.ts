@@ -3,35 +3,40 @@ import {
   Component,
   ElementRef,
   Renderer2,
+  signal,
   ViewChild,
 } from '@angular/core';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { HeaderComponent } from './header/header.component';
 import { AllUsersComponent } from '../pages/Users/all-users/all-users.component';
-import { AllProjectsComponent } from '../pages/Projects/Pages/all-projects/all-projects.component';
-import { CardComponent } from '../pages/Projects/components/card/card.component';
 import { RouterOutlet } from '@angular/router';
-import { IndividualProjectComponent } from '../pages/Projects/Pages/individual-project/individual-project.component';
+
+
 
 @Component({
   selector: 'app-layout',
-  imports: [AllProjectsComponent, RouterOutlet, AllUsersComponent],
+  imports: [RouterOutlet, AllUsersComponent],
   templateUrl: './layout.component.html',
 })
-export class LayoutComponent implements AfterViewInit {
+export class LayoutComponent{
   @ViewChild('sideMenu') sideMenu!: ElementRef;
+  @ViewChild('navItems') navItems!: ElementRef;
+
+  //Activaacion de Menu
+  menuActivate = signal<boolean>(true);
 
   constructor(private render: Renderer2) {}
 
-  ngAfterViewInit(): void {
-    console.log(this.sideMenu);
-  }
 
-  hideContent() {
-    this.render.setStyle(
-      this.sideMenu.nativeElement,
-      'transform',
-      'translateX(-100%)'
-    );
+  hideContent():void {
+    if(this.menuActivate()){
+      this.menuActivate.set(false);
+      this.render.addClass(this.sideMenu.nativeElement,"w-[100px]");
+      this.render.addClass(this.navItems.nativeElement,"translate-x-[-180%]");
+      return;
+    }
+
+    this.menuActivate.set(true);
+    this.render.removeClass(this.sideMenu.nativeElement,"w-[100px]");
+    this.render.removeClass(this.navItems.nativeElement,"translate-x-[-180%]");
+    console.log(this.navItems.nativeElement);
   }
 }
