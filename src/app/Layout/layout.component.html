@@ -1,60 +1,12 @@
-<div class="flex h-screen overflow-x-hidden">
-  <!-- Sidebar -->
-  <aside
-    class="w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white flex flex-col transition-all duration-300 transform"
-    #sideMenu
-  >
-    <img src="../../assets/icons/menuIcon.png" class="cursor-pointer w-[50px] h-[50px] hover:bg-gray-400/10 hover:rounded mt-5 ml-5" (click)="hideContent()"><img>
-    <nav class="flex-1 space-y-2 px-4 gap-5 transition-all duration-300 mt-5" #navItems>
-      <div class="p-5 text-lg font-bold mb-5 w-full">Panel de Administración</div>
-      <a
-        routerLink="/proyectos"
-        routerLinkActive="bg-purple-900"
-        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-slate-700"
-      >
-        📁 Proyectos
-      </a>
-      <a
-        routerLink="/usuarios"
-        routerLinkActive="bg-purple-900"
-        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-slate-700"
-      >
-        👤 Usuarios
-      </a>
-      <a
-        routerLink="/noticias"
-        routerLinkActive="bg-purple-900"
-        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-slate-700"
-      >
-        🗂 Noticias
-      </a>
-      <a
-        routerLink="/solicitudes"
-        routerLinkActive="bg-purple-900"
-        class="flex items-center gap-2 px-3 py-2 rounded hover:bg-slate-700"
-      >
-        📥 Solicitudes
-      </a>
-    </nav>
-  </aside>
+  <sidebar />
 
   <!-- Contenido principal -->
   <main class="fle bg-gray-900 text-white overflow-y-auto w-full">
-    <!-- Header -->
-    <header
-      class="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-gray-800"
-    >
-      <h1 class="text-lg font-semibold">Proyectos</h1>
-      <button class="text-sm text-gray-300 hover:text-white">Sign In</button>
-    </header>
+    <header-main />
 
     <!-- Aquí van los componentes -->
-    <section class="p-6 w-full">
-      <all-users />
+    <section class="p-5 w-full">
       <router-outlet></router-outlet>
     </section>
   </main>
 </div>
-
-<!-- <all-projects /> -->
-<!-- <all-users /> -->

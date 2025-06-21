@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-requests',
+  selector: 'app-request',
   imports: [],
-  templateUrl: './Requests.component.html',
+  templateUrl: './request.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RequestsComponent { }
+export class RequestComponent { }
