@@ -2,64 +2,16 @@
   <!-- Saludo -->
   <div>
     <h1 class="text-2xl font-bold text-gray-200">
-      Hola 'nombre_lider', bienvenido al Panel Administrativo
+      Hola 'nombrelider', bienvenido al Panel Administrativo
     </h1>
     <p class="text-gray-400 mt-1">
-      Aquí puedes visualizar y administrar los parametros del laboratorio.
+      Aquí puedes visualizar y administrar los parámetros del laboratorio.
     </p>
   </div>
 
   <!-- Tarjetas de resumen -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-    <div class="bg-white shadow rounded-2xl p-5">
-      <h2 class="text-gray-500 text-sm">Proyectos</h2>
-      <p class="text-3xl font-bold text-indigo-600">12</p>
-    </div>
+  <summary-cards />
 
-    <div class="bg-white shadow rounded-2xl p-5">
-      <h2 class="text-gray-500 text-sm">Usuarios</h2>
-      <p class="text-3xl font-bold text-indigo-600">34</p>
-    </div>
-
-    <div class="bg-white shadow rounded-2xl p-5">
-      <h2 class="text-gray-500 text-sm">Noticias activas</h2>
-      <p class="text-3xl font-bold text-indigo-600">6</p>
-    </div>
-
-    <div class="bg-white shadow rounded-2xl p-5">
-      <h2 class="text-gray-500 text-sm">Solicitudes pendientes</h2>
-      <p class="text-3xl font-bold text-indigo-600">3</p>
-    </div>
-  </div>
-
-  <!-- Accesos rápidos -->
-  <div>
-    <h2 class="text-lg font-semibold text-gray-200 mb-2">Accesos rápidos</h2>
-    <div class="flex flex-wrap gap-3">
-      <a
-        routerLink="/admin/proyectos"
-        class="bg-indigo-600 text-white px-4 py-2 rounded-xl shadow hover:bg-indigo-700 transition"
-      >
-        Ver Proyectos
-      </a>
-      <a
-        routerLink="/admin/usuarios"
-        class="bg-indigo-600 text-white px-4 py-2 rounded-xl shadow hover:bg-indigo-700 transition"
-      >
-        Ver Usuarios
-      </a>
-      <a
-        routerLink="/admin/noticias"
-        class="bg-indigo-600 text-white px-4 py-2 rounded-xl shadow hover:bg-indigo-700 transition"
-      >
-        Ver Noticias
-      </a>
-      <a
-        routerLink="/admin/solicitudes"
-        class="bg-indigo-600 text-white px-4 py-2 rounded-xl shadow hover:bg-indigo-700 transition"
-      >
-        Ver Solicitudes
-      </a>
-    </div>
-  </div>
+  <!-- Graficos -->
+  <!-- <graphics /> -->
 </div>

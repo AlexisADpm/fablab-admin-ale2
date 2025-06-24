@@ -1,0 +1,111 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <!-- Proyectos -->
+  <a
+    routerLink="/proyectos"
+    class="bg-white shadow hover:shadow-lg rounded-2xl p-6 flex items-center gap-4 transition transform hover:-translate-y-1 cursor-pointer"
+  >
+    <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9.75 3L4.5 8.25v10.5h15V3H9.75z"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-sm text-gray-500">Proyectos</h2>
+      <p class="text-3xl font-bold text-indigo-600">{{ proyectos.length }}</p>
+    </div>
+  </a>
+
+  <!-- Usuarios -->
+  <a
+    routerLink="/usuarios"
+    class="bg-white shadow hover:shadow-lg rounded-2xl p-6 flex items-center gap-4 transition transform hover:-translate-y-1 cursor-pointer"
+  >
+    <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5.121 17.804A4.992 4.992 0 0112 15a4.992 4.992 0 016.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-sm text-gray-500">Usuarios</h2>
+      <p class="text-3xl font-bold text-indigo-600">
+        {{ listaUsuarios.length }}
+      </p>
+    </div>
+  </a>
+
+  <!-- Noticias -->
+  <a
+    routerLink="/noticias"
+    class="bg-white shadow hover:shadow-lg rounded-2xl p-6 flex items-center gap-4 transition transform hover:-translate-y-1 cursor-pointer"
+  >
+    <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 7H5m14 4H5m14 4H5m2 4h10"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-sm text-gray-500">Noticias activas</h2>
+      <p class="text-3xl font-bold text-indigo-600">0</p>
+    </div>
+  </a>
+
+  <!-- Solicitudes -->
+  <a
+    routerLink="/solicitudes"
+    class="bg-white shadow hover:shadow-lg rounded-2xl p-6 flex items-center gap-4 transition transform hover:-translate-y-1 cursor-pointer"
+  >
+    <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 8v4l3 3m6 1.5A2.5 2.5 0 0118.5 21h-13A2.5 2.5 0 013 18.5v-13A2.5 2.5 0 015.5 3h5.75a2.5 2.5 0 011.768.732l5.25 5.25A2.5 2.5 0 0120 10.75V18.5z"
+        />
+      </svg>
+    </div>
+    <div>
+      <h2 class="text-sm text-gray-500">Solicitudes pendientes</h2>
+      <p class="text-3xl font-bold text-indigo-600">0</p>
+    </div>
+  </a>
+</div>
