@@ -1,0 +1,41 @@
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable, signal } from '@angular/core';
+import { News } from '../interfaces/news.interface';
+import { finalize, map, Observable } from 'rxjs';
+
+@Injectable({providedIn: 'root'})
+export class NewsService {
+
+  private httpclient = inject(HttpClient);
+
+  //News data
+  newsResponse = signal<News[]>([]);
+
+  //Carga de noticias señal
+  newsLoading = signal<boolean>(false);
+
+
+
+  constructor() {
+    this.getNews();
+  }
+
+  getNews(): void{
+     if(this.newsLoading()){
+      return;
+    }
+    this.newsLoading.set(true);
+
+    this.httpclient.get<News[]>("http://localhost:5263/api/noticias").pipe(
+      finalize(()=>{
+        this.newsLoading.set(false);
+      })
+    )
+    .subscribe({
+      next: (resp) => this.newsResponse.set(resp),
+      error: (error) => console.log("Ups hubo un error",error)
+    }
+    );
+  }
+
+}
