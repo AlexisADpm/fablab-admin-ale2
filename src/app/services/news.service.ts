@@ -13,6 +13,7 @@ export class NewsService {
 
   //Carga de noticias señal
   newsLoading = signal<boolean>(false);
+  errorHandler = signal<string | undefined>(undefined);
 
 
 
@@ -32,8 +33,14 @@ export class NewsService {
       })
     )
     .subscribe({
-      next: (resp) => this.newsResponse.set(resp),
-      error: (error) => console.log("Ups hubo un error",error)
+      next: (resp) => {
+        this.newsResponse.set(resp);
+        this.errorHandler.set(undefined);
+      },
+      error: (error) => {
+        this.errorHandler.set(error.statusText);
+        console.log(error);
+      }
     }
     );
   }

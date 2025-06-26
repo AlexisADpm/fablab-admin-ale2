@@ -31,9 +31,9 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
         </svg>
         @if(i == rutaActual().length-1){
-          <span class="text-indigo-400 capitalize">{{route}}</span>
+          <span class="text-indigo-400 capitalize cursor-pointer" >{{route}}</span>
         }@else {
-          <span class="text-gray-500 capitalize">{{route}}</span>
+          <span class="text-gray-500 capitalize cursor-pointer" routerLink="{{route}}">{{route}}</span>
         }
 
       }
