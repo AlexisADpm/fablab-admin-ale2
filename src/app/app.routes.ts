@@ -11,10 +11,17 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      { path: '', redirectTo: 'inicio', pathMatch: 'full' }, // <--- ¡ESTE FALTABA!
       { path: 'inicio', component: DashboardComponent },
-      { path: 'proyectos', component: AllProjectsComponent },
+      {
+        path: 'proyectos',
+        loadChildren: () => import('./pages/Projects/projects.routes'),
+      },
       { path: 'usuarios', component: UsersComponent },
-      { path: 'noticias', loadChildren: () => import('../app/pages/News/news.routes')},
+      {
+        path: 'noticias',
+        loadChildren: () => import('../app/pages/News/news.routes'),
+      },
       { path: 'solicitudes', component: RequestComponent },
     ],
   },
