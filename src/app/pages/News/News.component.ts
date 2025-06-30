@@ -15,7 +15,7 @@ export class NewsComponent {
   newsService = inject(NewsService);
 
   constructor(){
-    console.log(this.newsService.newsResponse());
+    this.newsService.getNews();
   }
 
 }

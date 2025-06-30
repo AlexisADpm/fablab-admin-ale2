@@ -1,9 +1,9 @@
+
+<h1 class="text-2xl font-bold">Ingresar Noticia</h1>
 <!-- component -->
 <div class="flex items-center justify-center p-12">
-  <!-- Author: FormBold Team -->
-  <!-- Learn More: https://formbold.com -->
-  <div class="mx-auto w-full max-w-[550px]">
-    <form action="https://formbold.com/s/FORM_ID" method="POST">
+  <div class="mx-auto w-full">
+    <form autocomplete="off" [formGroup]="CreationNewForm" (ngSubmit)="submitPostContent()">
       <div class="mb-5">
         <label
           for="name"
@@ -15,8 +15,9 @@
           type="text"
           name="name"
           id="name"
-          placeholder="Full Name"
+          placeholder="Titulo de la noticia"
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          formControlName="titulo"
         />
       </div>
       <div class="mb-5">
@@ -24,14 +25,15 @@
           for="email"
           class="mb-3 block text-base font-medium  text-white"
         >
-          Email Address
+          Epigrafe
         </label>
         <input
           type="email"
           name="email"
           id="email"
-          placeholder="example@domain.com"
+          placeholder="epigrafe"
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          formControlName="epigrafe"
         />
       </div>
       <div class="mb-5">
@@ -39,14 +41,16 @@
           for="subject"
           class="mb-3 block text-base font-medium  text-white"
         >
-          Subject
+          Autor
         </label>
         <input
           type="text"
           name="subject"
           id="subject"
-          placeholder="Enter your subject"
+          placeholder="Autor"
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          formControlName="autor"
+
         />
       </div>
       <div class="mb-5">
@@ -54,14 +58,15 @@
           for="message"
           class="mb-3 block text-base font-medium  text-white"
         >
-          Message
+          Contenido
         </label>
         <textarea
-          rows="4"
+          rows="9"
           name="message"
           id="message"
-          placeholder="Type your message"
+          placeholder="Contenido"
           class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          formControlName="contenido"
         ></textarea>
       </div>
       <div>
@@ -74,3 +79,9 @@
     </form>
   </div>
 </div>
+
+<!-- Componente de exito de peticion -->
+<div class="h-screen absolute top-0 w-full justify-center items-center z-10 bg-gray-400/50 hidden" #successPost>
+  <success-component [urlName]="'/noticias'" [tipoDePeticion]="'Ingresados'"></success-component>
+</div>
+

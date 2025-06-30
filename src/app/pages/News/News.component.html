@@ -1,10 +1,15 @@
 
 <button class="btn text-2xl absolute right-0 bottom-0 mr-5 mb-5 cursor-pointer" routerLink="creationnew">+</button>
 <h1 class="text-2xl font-bold mb-5">Administración de noticias</h1>
+
+@if(newsService.newsLoading()){
+  <h1 class="text-2xl">Cargando contenido...</h1>
+}
+
 @if (newsService.errorHandler()) {
   <error-component></error-component>
-  
 }
+
 @if(newsService.newsResponse().length){
   <div class="container mx-auto flex flex-col gap-2 sm:flex-row sm:flex-wrap h-screen">
     @for (new of newsService.newsResponse(); track $index) {
@@ -34,6 +39,5 @@
         </div>
       </div>
     }
-  
   </div>
 }
