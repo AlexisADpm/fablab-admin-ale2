@@ -1,4 +1,9 @@
-<section class="p-6 flex flex-col gap-5">
+<section class="flex flex-col">
+  <div class="divider divider-start pb-6">
+    <h1 class="text-3xl font-bold text-slate-800 dark:text-white">
+      Hoja de ruta del proyecto
+    </h1>
+  </div>
   <ol class="relative border-s border-gray-200 dark:border-gray-700">
     <li class="mb-10 ms-6">
       <span
@@ -112,7 +117,7 @@
   </ol>
   <button
     class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 justify-items-center group transition-transform duration-200 hover:scale-101"
-    [routerLink]="['./proyectos']"
+    [routerLink]="['/proyectos/project-update', proyectoEncontrado?.projectId]"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

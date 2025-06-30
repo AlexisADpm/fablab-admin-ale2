@@ -1,0 +1,111 @@
+<div class="rounded-lg shadow flex flex-col">
+  <h1 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">
+    Tabla de Proyectos
+  </h1>
+
+  <!-- Tabla scrollable -->
+  <div class="overflow-y-auto max-h-[500px]">
+    <table
+      class="min-w-full text-sm text-left text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 sticky top-0 z-10"
+      >
+        <tr>
+          <th class="px-6 py-3">Proyecto</th>
+          <th class="px-6 py-3">Fecha</th>
+          <th class="px-6 py-3">Descripción</th>
+          <th class="px-6 py-3">Categoria</th>
+          <th class="px-6 py-3">Integrantes</th>
+          <th class="px-6 py-3">Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let proyecto of proyectosPaginados">
+          <!-- Proyecto (imagen + título + categoría) -->
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <img
+                class="h-12 w-12 rounded object-cover flex-shrink-0"
+                [src]="proyecto.imgUrl"
+                alt="Imagen del proyecto"
+              />
+              <div class="ml-4">
+                <div class="text-sm font-medium text-gray-900 dark:text-white">
+                  {{ proyecto.title }}
+                </div>
+                <div class="text-sm text-gray-500">
+                  {{ proyecto.categoria }}
+                </div>
+              </div>
+            </div>
+          </td>
+
+          <!-- Fecha -->
+          <td class="px-6 py-4">{{ proyecto.date }}</td>
+
+          <!-- Descripción scrollable si es larga -->
+          <td class="px-6 py-4 align-top">
+            <div class="max-h-[3.5rem] overflow-y-auto text-sm text-gray-600">
+              {{ proyecto.description }}
+            </div>
+          </td>
+
+          <!-- Cartera -->
+          <td class="px-6 py-4">{{ proyecto.categoria }}</td>
+
+          <!-- Integrantes scrollables sin bullets -->
+          <td class="px-6 py-4 align-top">
+            <div class="max-h-[4rem] overflow-y-auto">
+              <ol class="list-decimal list-inside text-sm text-gray-600">
+                <li
+                  *ngFor="
+                    let integrante of proyecto.cartera_proyecto.integrantes
+                  "
+                >
+                  {{ integrante }}
+                </li>
+              </ol>
+            </div>
+          </td>
+
+          <!-- Acciones -->
+          <td class="px-3 py-4 whitespace-nowrap text-sm font-medium">
+            <a
+              (click)="editarProyecto(proyecto.projectId)"
+              class="text-indigo-600 hover:text-indigo-900 cursor-pointer"
+              >Editar</a
+            >
+            <a
+              (click)="eliminarProyecto(proyecto.projectId)"
+              class="ml-2 text-red-600 hover:text-red-900 cursor-pointer"
+              >Eliminar</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Botones de paginación abajo fuera del scroll -->
+  <div class="flex items-center justify-center gap-4 mt-4">
+    <button
+      (click)="irAPagina(currentPage - 1)"
+      [disabled]="currentPage === 1"
+      class="btn"
+    >
+      Anterior
+    </button>
+    <span class="text-slate-600">
+      Página <strong>{{ currentPage }}</strong> de
+      <strong>{{ totalPages }}</strong>
+    </span>
+    <button
+      (click)="irAPagina(currentPage + 1)"
+      [disabled]="currentPage === totalPages"
+      class="btn"
+    >
+      Siguiente
+    </button>
+  </div>
+</div>

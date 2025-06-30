@@ -6,7 +6,7 @@
     "carrera": "Ingeniería en Informática",
     "email": "alexis.perez@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": ["Super Impresora 3D", "Brazo Robótico", "Impresora 3D", "Brazo Robótico", "Impresora 3D", "Brazo Robótico"]
   },
   {
     "id_usuario": 2,
@@ -53,1888 +53,400 @@
     "rol": "Integrante",
     "proyectos_asignados": []
   },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
+  {
+    "id_usuario": 7,
+    "nombre": "Valentina Soto",
+    "rut": "19.123.456-8",
+    "carrera": "Ingeniería Civil",
+    "email": "valentina.soto@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Brazo Robótico"]
+  },
+  {
+    "id_usuario": 8,
+    "nombre": "Matías Rojas",
+    "rut": "18.234.567-9",
+    "carrera": "Ingeniería Mecánica",
+    "email": "matias.rojas@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 9,
+    "nombre": "Camila Torres",
+    "rut": "17.345.678-0",
+    "carrera": "Ingeniería Comercial",
+    "email": "camila.torres@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": []
+  },
+  {
+    "id_usuario": 10,
+    "nombre": "Felipe Vargas",
+    "rut": "16.456.789-1",
     "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
+    "email": "felipe.vargas@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
     "proyectos_asignados": ["Brazo Robótico"]
   },
   {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
+    "id_usuario": 11,
+    "nombre": "Paula Castillo",
+    "rut": "15.567.890-2",
     "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "email": "paula.castillo@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
   },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
+  {
+    "id_usuario": 12,
+    "nombre": "Cristian Muñoz",
+    "rut": "14.678.901-3",
+    "carrera": "Ingeniería Electrónica",
+    "email": "cristian.munoz@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 13,
+    "nombre": "Javiera Paredes",
+    "rut": "13.789.012-4",
+    "carrera": "Ingeniería Industrial",
+    "email": "javiera.paredes@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": []
+  },
+  {
+    "id_usuario": 14,
+    "nombre": "Tomás Fuentes",
+    "rut": "12.890.123-5",
+    "carrera": "Automatización y Robótica",
+    "email": "tomas.fuentes@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Brazo Robótico"]
+  },
+  {
+    "id_usuario": 15,
+    "nombre": "Fernanda Reyes",
+    "rut": "11.901.234-6",
     "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
+    "email": "fernanda.reyes@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": []
   },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
+    "id_usuario": 16,
+    "nombre": "Ignacio Salazar",
+    "rut": "10.012.345-7",
     "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
+    "email": "ignacio.salazar@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 17,
+    "nombre": "Josefa Contreras",
+    "rut": "22.123.456-8",
+    "carrera": "Diseño Digital",
+    "email": "josefa.contreras@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": []
+  },
+  {
+    "id_usuario": 18,
+    "nombre": "Gabriel Silva",
+    "rut": "23.234.567-9",
+    "carrera": "Ingeniería Industrial",
+    "email": "gabriel.silva@inacap.cl",
+    "rol": "Integrante",
     "proyectos_asignados": ["Brazo Robótico"]
   },
   {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "id_usuario": 19,
+    "nombre": "Antonia Herrera",
+    "rut": "24.345.678-0",
+    "carrera": "Ingeniería Mecánica",
+    "email": "antonia.herrera@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
-  },{
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
+  },
+  {
+    "id_usuario": 20,
+    "nombre": "Vicente Morales",
+    "rut": "25.456.789-1",
+    "carrera": "Automatización y Robótica",
+    "email": "vicente.morales@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 21,
+    "nombre": "Martina Riquelme",
+    "rut": "26.567.890-2",
     "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
+    "email": "martina.riquelme@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": []
   },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
+    "id_usuario": 22,
+    "nombre": "Benjamín Araya",
+    "rut": "27.678.901-3",
     "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
+    "email": "benjamin.araya@inacap.cl",
+    "rol": "Integrante",
     "proyectos_asignados": ["Brazo Robótico"]
   },
   {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
+    "id_usuario": 23,
+    "nombre": "Catalina Espinoza",
+    "rut": "28.789.012-4",
     "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "email": "catalina.espinoza@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
   },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
+  {
+    "id_usuario": 24,
+    "nombre": "Lucas Navarro",
+    "rut": "29.890.123-5",
+    "carrera": "Ingeniería Industrial",
+    "email": "lucas.navarro@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 25,
+    "nombre": "Isidora Vega",
+    "rut": "30.901.234-6",
+    "carrera": "Automatización y Robótica",
+    "email": "isidora.vega@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": []
+  },
+  {
+    "id_usuario": 26,
+    "nombre": "Maximiliano Bravo",
+    "rut": "31.012.345-7",
+    "carrera": "Ingeniería Mecánica",
+    "email": "maximiliano.bravo@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Brazo Robótico"]
+  },
+  {
+    "id_usuario": 27,
+    "nombre": "Florencia Carrasco",
+    "rut": "32.123.456-8",
     "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
+    "email": "florencia.carrasco@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": []
   },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
+    "id_usuario": 28,
+    "nombre": "Diego Palma",
+    "rut": "33.234.567-9",
     "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
+    "email": "diego.palma@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 29,
+    "nombre": "Renata Godoy",
+    "rut": "34.345.678-0",
+    "carrera": "Diseño Digital",
+    "email": "renata.godoy@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": []
+  },
+  {
+    "id_usuario": 30,
+    "nombre": "Sebastián Tapia",
+    "rut": "35.456.789-1",
+    "carrera": "Ingeniería Industrial",
+    "email": "sebastian.tapia@inacap.cl",
+    "rol": "Integrante",
     "proyectos_asignados": ["Brazo Robótico"]
   },
   {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
+    "id_usuario": 31,
+    "nombre": "Amanda Medina",
+    "rut": "36.567.890-2",
     "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "email": "amanda.medina@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
   },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
+  {
+    "id_usuario": 32,
+    "nombre": "Emilio Castro",
+    "rut": "37.678.901-3",
+    "carrera": "Ingeniería Mecánica",
+    "email": "emilio.castro@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 33,
+    "nombre": "Josefina Morales",
+    "rut": "38.789.012-4",
     "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
+    "email": "josefina.morales@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": []
   },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
+    "id_usuario": 34,
+    "nombre": "Andrés Figueroa",
+    "rut": "39.890.123-5",
     "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
+    "email": "andres.figueroa@inacap.cl",
+    "rol": "Integrante",
     "proyectos_asignados": ["Brazo Robótico"]
   },
   {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
+    "id_usuario": 35,
+    "nombre": "Constanza Pino",
+    "rut": "40.901.234-6",
     "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "email": "constanza.pino@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
   },
   {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
+    "id_usuario": 36,
+    "nombre": "Francisco Guzmán",
+    "rut": "41.012.345-7",
+    "carrera": "Ingeniería Industrial",
+    "email": "francisco.guzman@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 37,
+    "nombre": "María José Ramírez",
+    "rut": "42.123.456-8",
+    "carrera": "Automatización y Robótica",
+    "email": "mariajose.ramirez@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": []
+  },
+  {
+    "id_usuario": 38,
+    "nombre": "Pedro Herrera",
+    "rut": "43.234.567-9",
+    "carrera": "Ingeniería Mecánica",
+    "email": "pedro.herrera@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Brazo Robótico"]
+  },
+  {
+    "id_usuario": 39,
+    "nombre": "Camila Soto",
+    "rut": "44.345.678-0",
     "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
+    "email": "camila.soto@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": []
   },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
+    "id_usuario": 40,
+    "nombre": "Rodrigo Reyes",
+    "rut": "45.456.789-1",
     "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
+    "email": "rodrigo.reyes@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 41,
+    "nombre": "Daniela Morales",
+    "rut": "46.567.890-2",
+    "carrera": "Diseño Digital",
+    "email": "daniela.morales@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": []
+  },
+  {
+    "id_usuario": 42,
+    "nombre": "Alejandro Rojas",
+    "rut": "47.678.901-3",
+    "carrera": "Ingeniería Industrial",
+    "email": "alejandro.rojas@inacap.cl",
+    "rol": "Integrante",
     "proyectos_asignados": ["Brazo Robótico"]
   },
   {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
+    "id_usuario": 43,
+    "nombre": "Valeria Fuentes",
+    "rut": "48.789.012-4",
     "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "email": "valeria.fuentes@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
   },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
+  {
+    "id_usuario": 44,
+    "nombre": "Cristóbal Salinas",
+    "rut": "49.890.123-5",
+    "carrera": "Ingeniería Mecánica",
+    "email": "cristobal.salinas@inacap.cl",
+    "rol": "Integrante",
+    "proyectos_asignados": ["Impresora 3D"]
+  },
+  {
+    "id_usuario": 45,
+    "nombre": "Trinidad Navarro",
+    "rut": "50.901.234-6",
     "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
+    "email": "trinidad.navarro@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": []
   },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
+    "id_usuario": 46,
+    "nombre": "Simón Castillo",
+    "rut": "51.012.345-7",
     "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
+    "email": "simon.castillo@inacap.cl",
+    "rol": "Integrante",
     "proyectos_asignados": ["Brazo Robótico"]
   },
   {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
+    "id_usuario": 47,
+    "nombre": "Josefa González",
+    "rut": "52.123.456-8",
     "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "email": "josefa.gonzalez@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
   },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
+    "id_usuario": 48,
+    "nombre": "Martín Pérez",
+    "rut": "53.234.567-9",
     "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
+    "email": "martin.perez@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
+    "proyectos_asignados": ["Impresora 3D"]
   },
   {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
+    "id_usuario": 49,
+    "nombre": "Agustina Díaz",
+    "rut": "54.345.678-0",
     "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
+    "email": "agustina.diaz@inacap.cl",
     "rol": "Integrante",
     "proyectos_asignados": []
-  },{
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
   },
   {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
+    "id_usuario": 50,
+    "nombre": "Vicente Torres",
+    "rut": "55.456.789-1",
+    "carrera": "Ingeniería Mecánica",
+    "email": "vicente.torres@inacap.cl",
     "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
     "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },{
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },{
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },{
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },{
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
-  },
-    {
-    "id_usuario": 1,
-    "nombre": "Alexis Perez",
-    "rut": "21.450.272-0",
-    "carrera": "Ingeniería en Informática",
-    "email": "alexis.perez@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico","Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 2,
-    "nombre": "Sandy Sandoza",
-    "rut": "20.123.456-7",
-    "carrera": "Ingeniería Industrial",
-    "email": "sandy.sandoza@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 3,
-    "nombre": "Jorge Baras",
-    "rut": "10.345.678-1",
-    "carrera": "Ingeniería Electrónica",
-    "email": "javier.morales@inacap.cl",
-    "rol": "Profesor a cargo",
-    "proyectos_asignados": ["Brazo Robótico"]
-  },
-  {
-    "id_usuario": 4,
-    "nombre": "Cote Gutierrez",
-    "rut": "21.234.314-0",
-    "carrera": "Diseño Digital",
-    "email": "cote.gutierrez@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": []
-  },
-  {
-    "id_usuario": 5,
-    "nombre": "Nicolas Escobar",
-    "rut": "20.777.543-2",
-    "carrera": "Automatización y Robótica",
-    "email": "nicolas.escobar@inacap.cl",
-    "rol": "Líder del laboratorio",
-    "proyectos_asignados": ["Impresora 3D", "Brazo Robótico"]
-  },
-  {
-    "id_usuario": 6,
-    "nombre": "Daniel Ronceros",
-    "rut": "21.987.654-3",
-    "carrera": "Diseño Digital",
-    "email": "daniel.rojas@inacap.cl",
-    "rol": "Integrante",
-    "proyectos_asignados": []
   }
 ]

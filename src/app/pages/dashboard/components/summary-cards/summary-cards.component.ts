@@ -1,10 +1,12 @@
 import { Component, AfterViewInit } from '@angular/core';
 import dblocalusuarios from '../../../../data/dblocalusuarios.json';
 import dblocalproyectos from '../../../../data/dblocalproyectos.json';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'summary-cards',
   templateUrl: './summary-cards.component.html',
+  imports: [RouterLink],
 })
 export class SummaryCardsComponent implements AfterViewInit {
   proyectosFinal = dblocalproyectos.length;
