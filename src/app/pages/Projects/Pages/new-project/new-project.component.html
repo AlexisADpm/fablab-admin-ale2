@@ -1,0 +1,136 @@
+<section
+  class="p-6 max-w-3xl mx-auto bg-white dark:bg-slate-900 rounded-xl shadow-md"
+>
+  <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">
+    Solicitud de Creación de Proyecto
+  </h2>
+
+  <form>
+    <!-- Título -->
+    <div>
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Título del proyecto</label
+      >
+      <input
+        type="text"
+        name="titulo"
+        required
+        class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-600 dark:bg-slate-800 dark:text-white"
+        placeholder="Ej. Plataforma para domótica"
+      />
+    </div>
+
+    <!-- Descripción -->
+    <div>
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Descripción breve</label
+      >
+      <textarea
+        name="descripcion"
+        rows="4"
+        required
+        class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-600 dark:bg-slate-800 dark:text-white"
+        placeholder="Describe en que consiste tu proyecto en pocas palabras..."
+      ></textarea>
+    </div>
+
+    <!-- Categoría -->
+    <div>
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Categoría</label
+      >
+      <select
+        name="categoria"
+        required
+        class="w-full px-4 py-2 border rounded-md dark:bg-slate-800 dark:text-white"
+      >
+        <option value="" disabled selected>Selecciona una categoría</option>
+        <option>Impresión 3D</option>
+        <option>Corte Láser</option>
+        <option>Electrónica</option>
+        <option>Mixto</option>
+      </select>
+    </div>
+
+    <!-- ¿Es individual? -->
+    <div>
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >¿Es un proyecto individual?</label
+      >
+      <div class="flex items-center gap-4">
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            name="individual"
+            value="true"
+            checked
+            class="mr-2"
+          />
+          Sí
+        </label>
+        <label class="inline-flex items-center">
+          <input type="radio" name="individual" value="false" class="mr-2" />
+          No
+        </label>
+      </div>
+    </div>
+
+    <!-- Cantidad de integrantes (visible con lógica simple en TS si quieres) -->
+    <div>
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+      >
+        Cantidad de integrantes necesarios (0 si es individual)
+      </label>
+      <input
+        type="number"
+        name="integrantesNecesarios"
+        min="0"
+        value="0"
+        class="w-full px-4 py-2 border rounded-md dark:bg-slate-800 dark:text-white"
+      />
+    </div>
+
+    <!-- Link de referencia -->
+    <div>
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Link de referencia (opcional)</label
+      >
+      <input
+        type="url"
+        name="referencia"
+        placeholder="https://..."
+        class="w-full px-4 py-2 border rounded-md dark:bg-slate-800 dark:text-white"
+      />
+    </div>
+
+    <!-- Fecha -->
+    <div>
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Fecha estimada de inicio</label
+      >
+      <input
+        type="date"
+        name="fechaInicio"
+        required
+        class="w-full px-4 py-2 border rounded-md dark:bg-slate-800 dark:text-white"
+      />
+    </div>
+
+    <!-- Botón -->
+    <div class="flex justify-end pt-4">
+      <button
+        type="submit"
+        class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition"
+      >
+        Enviar solicitud
+      </button>
+    </div>
+  </form>
+</section>

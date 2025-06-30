@@ -1,0 +1,66 @@
+<section
+  class="p-6 max-w-3xl mx-auto bg-white dark:bg-slate-900 rounded-xl shadow-md"
+>
+  <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-6">
+    Actualizar Proyecto:
+    <span class="text-indigo-600">{{
+      proyectoEncontrado?.title || "Cargando..."
+    }}</span>
+  </h2>
+
+  <form (submit)="guardarActualizacion($event)">
+    <!-- Título de la actualización -->
+    <div class="mb-4">
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Título</label
+      >
+      <input
+        type="text"
+        name="titulo"
+        required
+        placeholder="Ej. Se ensambló la estructura base"
+        class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-600 dark:bg-slate-800 dark:text-white"
+      />
+    </div>
+
+    <!-- Descripción -->
+    <div class="mb-4">
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Descripción</label
+      >
+      <textarea
+        name="descripcion"
+        rows="4"
+        required
+        placeholder="Describe el avance o modificación realizada..."
+        class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-indigo-600 dark:bg-slate-800 dark:text-white"
+      ></textarea>
+    </div>
+
+    <!-- Imagen opcional -->
+    <div class="mb-4">
+      <label
+        class="block mb-1 text-sm font-medium text-gray-700 dark:text-white"
+        >Imagen (opcional)</label
+      >
+      <input
+        type="file"
+        name="imagen"
+        accept="image/*"
+        class="w-full text-sm text-gray-500 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+      />
+    </div>
+
+    <!-- Botón -->
+    <div class="flex justify-end">
+      <button
+        type="submit"
+        class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition"
+      >
+        Guardar actualización
+      </button>
+    </div>
+  </form>
+</section>

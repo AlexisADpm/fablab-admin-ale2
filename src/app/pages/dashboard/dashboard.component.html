@@ -1,16 +1,17 @@
-<div class="p-6 space-y-6">
-  <!-- Saludo -->
-  <div>
-    <h1 class="text-2xl font-bold text-gray-200">
-      Hola 'nombrelider', bienvenido al Panel Administrativo
-    </h1>
-    <p class="text-gray-400 mt-1">
-      Aquí puedes visualizar y administrar los parámetros del laboratorio.
-    </p>
-  </div>
-
-  <!-- Tarjetas de resumen -->
-  <summary-cards />
-
-  <!-- Graficos -->
+<!-- Saludo -->
+<div>
+  <h1 class="text-3xl font-bold pb-2">Panel administrativo</h1>
+  <h2 class="text-2xl font-bold pb-2">
+    Hola {{ username || "Usuario" }}, bienvenido al Panel Administrativo
+  </h2>
+  <p class="text-gray-400 mb-4">
+    Aquí puedes visualizar y administrar los parámetros del laboratorio.
+  </p>
 </div>
+
+<!-- Tarjetas de resumen -->
+<summary-cards />
+
+<!-- Graficos -->
+
+<div class="divider"></div>

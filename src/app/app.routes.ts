@@ -5,28 +5,38 @@ import { NewsComponent } from './pages/News/News.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsersComponent } from './pages/users/users.component';
 import { RequestComponent } from './pages/request/request.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProjectsTableComponent } from './pages/projects-table/projects-table.component';
 
 export const routes: Routes = [
   {
     path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'inicio', pathMatch: 'full' }, // <--- ¡ESTE FALTABA!
+      { path: 'layout', redirectTo: 'inicio', pathMatch: 'full' },
       { path: 'inicio', component: DashboardComponent },
       {
         path: 'proyectos',
-        loadChildren: () => import('./pages/Projects/projects.routes'),
+        loadChildren: () =>
+          import('./pages/Projects/projects.routes').then((m) => m.default),
       },
       { path: 'usuarios', component: UsersComponent },
+      { path: 'projects-table', component: ProjectsTableComponent },
       {
         path: 'noticias',
-        loadChildren: () => import('../app/pages/News/news.routes'),
+        loadChildren: () =>
+          import('./pages/News/news.routes').then((m) => m.default),
       },
       { path: 'solicitudes', component: RequestComponent },
     ],
-  },
-  {
-    path: '**',
-    redirectTo: 'inicio',
   },
 ];

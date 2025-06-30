@@ -1,11 +1,17 @@
 <header
   class="bg-slate-900 text-white shadow-md px-6 py-4 flex relative items-center"
 >
-
   <div class="flex gap-5">
-    <img src="../../../assets/icons/menuIcon.png" class="w-[35px] h-[35px] ml-5 cursor-pointer hover:rounded hover:bg-indigo-600 " alt="" (click)="toggleMenuActivate()"/>
+    <img
+      src="../../../assets/icons/menuIcon.png"
+      class="w-[35px] h-[35px] ml-5 cursor-pointer hover:rounded hover:bg-indigo-600"
+      alt=""
+      (click)="toggleMenuActivate()"
+    />
     <!-- Breadcrumbs / Ruta actual -->
-    <div class="items-center space-x-2 text-sm font-medium text-gray-300 hidden sm:flex">
+    <div
+      class="items-center space-x-2 text-sm font-medium text-gray-300 hidden sm:flex"
+    >
       <svg
         class="w-5 h-5 text-white"
         fill="none"
@@ -21,43 +27,40 @@
       </svg>
       <span class="text-gray-400">Panel</span>
       @for(route of rutaActual(); track $index; let i = $index){
-        <svg
-          class="w-4 h-4 text-gray-500"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-        @if(i == rutaActual().length-1){
-          <span class="text-indigo-400 capitalize">{{route}}</span>
-        }@else {
-          <span class="text-gray-500 capitalize">{{route}}</span>
-        }
-
-      }
+      <svg
+        class="w-4 h-4 text-gray-500"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+      @if(i == rutaActual().length-1){
+      <span class="text-indigo-400 capitalize">{{ route }}</span>
+      }@else {
+      <span class="text-gray-500 capitalize">{{ route }}</span>
+      } }
     </div>
   </div>
 
-
   <div class="absolute right-0 mr-5">
-
     <!-- Opciones a la derecha -->
     <div class="flex items-center space-x-4">
       <!-- Botón notificación (puedes dejarlo opcional) -->
       <button class="relative hover:text-indigo-400 transition">
         <svg
-          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          stroke="currentColor"
-          stroke-width="2"
           viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M15 17h5l-1.405-1.405M19.595 15.595A2.032 2.032 0 0 0 20 14.5V11a2 2 0 0 0-2-2h-1.5M6 10h4m-4 4h4m-4-8h4M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"
+            d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
           />
         </svg>
       </button>
@@ -76,11 +79,8 @@
       <button
         class="bg-indigo-600 hover:bg-indigo-700 transition px-3 py-1.5 text-sm rounded-xl font-semibold"
       >
-        Cerrar sesión
+        <a href="#">Cerrar sesión</a>
       </button>
     </div>
   </div>
-
-
-
 </header>

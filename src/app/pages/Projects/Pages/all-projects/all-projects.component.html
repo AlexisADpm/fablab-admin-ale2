@@ -1,24 +1,51 @@
-<div class="flex flex-col sm:flex-row mt-5">
-  <!-- Filtro  -->
-  <!-- <filter-component class="hidden lg:flex" /> -->
-
-  <div class="gap-2"></div>
-
-  <div class="flex flex-col items-end gap-4">
-    <!-- Order by  -->
-
-    <!-- <order-by /> -->
-
-    <!-- Cards  -->
-    <section
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-6 xl:gap-8 max-w-[1600px] mx-auto"
+<div class="flex justify-between items-center mb-5">
+  <h1 class="text-3xl font-bold">Mis proyectos</h1>
+  <button
+    routerLink="new-project"
+    class="bg-indigo-600 text-white px-4 py-2 rounded-xl shadow hover:bg-indigo-700 transition flex items-center gap-2"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-5 h-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
     >
-      <app-card
-        *ngFor="let proyecto of proyecto"
-        [title]="proyecto.title"
-        [imgUrl]="proyecto.imgUrl"
-        [routerLink]="[proyecto.projectId]"
-      ></app-card>
-    </section>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 4v16m8-8H4"
+      />
+    </svg>
+    Crear un nuevo proyecto
+  </button>
+</div>
+
+<!-- Scroll horizontal -->
+<div class="overflow-x-auto pb-4">
+  <div class="flex gap-4 px-1 min-w-max">
+    <app-card
+      *ngFor="let proyecto of proyecto | slice : 0 : 2"
+      [title]="proyecto.title"
+      [imgUrl]="proyecto.imgUrl"
+      [routerLink]="[proyecto.projectId]"
+    ></app-card>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<h1 class="text-2xl font-bold mb-5">Proyectos en conjunto</h1>
+
+<!-- Scroll horizontal -->
+<div class="overflow-x-auto pb-4">
+  <div class="flex gap-4 px-1 min-w-max">
+    <app-card
+      *ngFor="let proyecto of proyecto | slice : 0 : 5"
+      [title]="proyecto.title"
+      [imgUrl]="proyecto.imgUrl"
+      [routerLink]="[proyecto.projectId]"
+    ></app-card>
   </div>
 </div>

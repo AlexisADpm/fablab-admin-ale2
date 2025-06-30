@@ -3,84 +3,84 @@
     "projectId": 1,
     "title": "Impresora 3D",
     "description": "Desarrollo de una impresora 3D personalizada para prototipos rápidos.",
-    "date": "2024-05-01",
+    "date": "01/05/2024",
     "imgUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80",
     "categoria": "impresion 3D",
     "cartera_proyecto": {
       "id": 101,
       "nombre": "Cartera Impresión 3D",
       "descripcion": "Proyectos relacionados con tecnologías de impresión 3D.",
-      "cantidad_integrantes": 2
+      "integrantes": ["Ana López", "Carlos Pérez"]
     }
   },
   {
     "projectId": 2,
     "title": "Brazo Robótico",
     "description": "Construcción de un brazo robótico controlado por Arduino.",
-    "date": "2024-05-10",
+    "date": "10/05/2024",
     "imgUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
     "categoria": "electronica",
     "cartera_proyecto": {
       "id": 102,
       "nombre": "Cartera Electrónica",
       "descripcion": "Proyectos de automatización y electrónica.",
-      "cantidad_integrantes": 3
+      "integrantes": ["Luis Gómez", "María Torres", "Javier Ruiz"]
     }
   },
   {
     "projectId": 3,
     "title": "Corte Láser",
     "description": "Diseño y fabricación de piezas mediante corte láser.",
-    "date": "2024-05-15",
+    "date": "15/05/2024",
     "imgUrl": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
     "categoria": "corte laser",
     "cartera_proyecto": {
       "id": 103,
       "nombre": "Cartera Corte Láser",
       "descripcion": "Proyectos con enfoque en diseño asistido por láser.",
-      "cantidad_integrantes": 0
+      "integrantes": ["Sofía Martínez"]
     }
   },
   {
     "projectId": 4,
     "title": "Domótica",
     "description": "Automatización de una maqueta de casa con sensores y actuadores.",
-    "date": "2024-05-20",
+    "date": "20/05/2024",
     "imgUrl": "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80",
     "categoria": "electronica",
     "cartera_proyecto": {
       "id": 104,
       "nombre": "Cartera Domótica",
       "descripcion": "Proyectos de automatización del hogar.",
-      "cantidad_integrantes": 0
+      "integrantes": ["Pedro Sánchez", "Lucía Fernández"]
     }
   },
   {
     "projectId": 5,
     "title": "Dron FPV",
     "description": "Montaje y configuración de un dron con cámara FPV.",
-    "date": "2024-05-25",
+    "date": "25/05/2024",
     "imgUrl": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
     "categoria": "mixto",
     "cartera_proyecto": {
       "id": 105,
       "nombre": "Cartera Drones",
       "descripcion": "Proyectos con tecnologías mixtas y movilidad.",
-      "cantidad_integrantes": 0
+      "integrantes": ["Miguel Ángel", "Elena Castro", "Raúl Díaz"]
     }
   },
   {
     "projectId": 6,
     "title": "Estación Meteorológica",
     "description": "Creación de una estación meteorológica con recolección de datos en tiempo real.",
-    "date": "2024-06-01",
+    "date": "01/06/2024",
     "imgUrl": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80",
     "categoria": "electronica",
     "cartera_proyecto": {
       "id": 106,
       "nombre": "Cartera Medio Ambiente",
       "descripcion": "Proyectos orientados a la sostenibilidad y monitoreo ambiental.",
-      "cantidad_integrantes": 0
+      "integrantes": ["Valeria Romero"]
     }
   }
 ]
