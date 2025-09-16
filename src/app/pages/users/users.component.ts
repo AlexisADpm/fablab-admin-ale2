@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import dblocalusuarios from '../../data/dblocalusuarios.json';
-import { UsersInterface } from '../../interfaces/users.interface';
 import { UsersService } from '../../services/users.service';
+
+
+
 @Component({
   selector: 'users',
   imports: [NgFor],
@@ -12,6 +14,10 @@ import { UsersService } from '../../services/users.service';
 export class UsersComponent {
 
   usersService = inject(UsersService);
+  listaUsuarios: any[] = dblocalusuarios;
+  currentPage: number = 1;
+  itemsPerPage: number = 6;
+
 
   constructor() {
     // Llamada de prueba al iniciar
@@ -32,21 +38,26 @@ export class UsersComponent {
   // Paginacion
   // ---------------------------
 
+
   //Esto esta hardcodeado!!!!!!!!!!!!!!!!!!! 
   listaUsuarios: any[] = dblocalusuarios;
   currentPage: number = 1;
   itemsPerPage: number = 6;
   get totalPages(): number {
+
+  //Esto esta hardcodeado!!!!!!!!!!!!!!!!!!!
+  totalPages(): number {
+
     return Math.ceil(this.listaUsuarios.length / this.itemsPerPage);
   }
 
-  get usuariosPaginados() {
+  usuariosPaginados() {
     const start = (this.currentPage - 1) * this.itemsPerPage;
     return this.listaUsuarios.slice(start, start + this.itemsPerPage);
   }
 
-  get paginasCompactas(): number[] {
-    const total = this.totalPages;
+  paginasCompactas(): number[] {
+    const total = this.totalPages();
     const actual = this.currentPage;
     const delta = 2; // Cuántos botones antes y después del actual
 
@@ -77,7 +88,7 @@ export class UsersComponent {
   }
 
   irAPagina(pagina: number) {
-    if (pagina >= 1 && pagina <= this.totalPages) {
+    if (pagina >= 1 && pagina <= this.totalPages()) {
       this.currentPage = pagina;
     }
   }

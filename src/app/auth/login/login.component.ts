@@ -1,0 +1,36 @@
+import { Component, inject, signal } from '@angular/core';
+import { FormsModule, FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
+
+@Component({
+  selector: 'login',
+  templateUrl: './login.component.html',
+
+  imports: [FormsModule, ReactiveFormsModule],
+})
+export class LoginComponent {
+
+  formBuilder = inject(FormBuilder);
+  isLoginView = signal<boolean>(true);
+
+  //Formularios
+
+  fbLogin: FormGroup = this.formBuilder.group({
+    "email":["",[Validators.required]],
+    "contrasena":["",[Validators.required]]
+  });
+
+
+  fbRegister:FormGroup = this.formBuilder.group({});
+
+
+  onLogin() {
+
+    console.log(this.fbLogin.value);
+
+    //TODO: 1. Guarda el objeto en una variable 2. Crear interfaz de login
+
+  }
+
+}
