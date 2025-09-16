@@ -11,12 +11,12 @@ import { UsersService } from '../../services/users.service';
 })
 export class UsersComponent {
 
-
   usersService = inject(UsersService);
 
   constructor() {
     // Llamada de prueba al iniciar
     this.usersService.obtenerUsuarios();
+    console.log(this.usersService.usuariosData());
   }
 
   // Ejemplos para pruebas
@@ -32,7 +32,7 @@ export class UsersComponent {
   // Paginacion
   // ---------------------------
 
-  //Esto esta hardcodeado!!!!!!!!!!!!!!!!!!!
+  //Esto esta hardcodeado!!!!!!!!!!!!!!!!!!! 
   listaUsuarios: any[] = dblocalusuarios;
   currentPage: number = 1;
   itemsPerPage: number = 6;
