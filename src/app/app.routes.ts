@@ -5,19 +5,20 @@ import { NewsComponent } from './pages/News/News.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UsersComponent } from './pages/users/users.component';
 import { RequestComponent } from './pages/request/request.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { ProjectsTableComponent } from './pages/projects-table/projects-table.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { AuthLayoutComponent } from './auth/layout/auth-layout/auth-layout.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'auth',
     pathMatch: 'full',
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'auth',
+    component: AuthLayoutComponent,
   },
   {
     path: '',

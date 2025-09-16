@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { UsersInterface } from '../interfaces/users.interface';
 import { HttpClient } from '@angular/common/http';
-import { finalize, map, tap } from 'rxjs';
+import { finalize, map, Observable, tap } from 'rxjs';
 import { UserResponse } from '../utils/responses/userResponse';
 import { UserApiToUsersArray } from '../utils/mappers/usersMapper';
 
@@ -16,13 +16,9 @@ export class UsersService {
   //Data user de usuarios
   usuariosData = signal<UsersInterface[]>([])
 
-  constructor() {
-  }
+  obtenerUsuarios(){
 
-
-  obtenerUsuarios() {
-
-    this.httpClient.get<UserResponse[]>("http://localhost:5263/api/usuarios")
+    return this.httpClient.get<UserResponse[]>("http://localhost:5263/api/usuarios")
     .pipe(
       map(users => {
         console.log(users);
@@ -42,6 +38,7 @@ export class UsersService {
       }
     })
   }
+
 
   agregarUsuario(usuario: any) {
     console.log('UsersService: agregarUsuario ejecutado', usuario);

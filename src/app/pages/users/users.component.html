@@ -207,27 +207,16 @@
       </button>
 
       <!-- Texto -->
-<<<<<<< HEAD
       <p class="text-slate-600">
         Página <strong class="text-slate-800">{{ currentPage }}</strong> de
         <strong class="text-slate-800">{{ totalPages() }}</strong>
-=======
-      <p class="text-white">
-        Página <strong class="text-white">{{ currentPage }}</strong> de
-        <strong class="text-white">{{ totalPages }}</strong>
->>>>>>> 309fd71504219610789ce1365d60420b72fd4f8d
       </p>
 
       <!-- Siguiente -->
       <button
         (click)="irAPagina(currentPage + 1)"
-<<<<<<< HEAD
         [disabled]="currentPage === totalPages()"
         class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-600 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-800 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-=======
-        [disabled]="currentPage === totalPages"
-          class="rounded-md border border-slate-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-slate-200 hover:text-white hover:bg-slate-800 hover:border-slate-800 focus:text-white focus:bg-slate-400 focus:border-slate-800 active:border-slate-800 active:text-white active:bg-slate-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
->>>>>>> 309fd71504219610789ce1365d60420b72fd4f8d
         type="button"
       >
         <svg

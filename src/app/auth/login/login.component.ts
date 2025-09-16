@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
@@ -11,8 +11,8 @@ import { NgIf } from '@angular/common';
 })
 export class LoginComponent {
 
-  //TODO: Crear servicio auth
   formBuilder = inject(FormBuilder);
+  isLoginView = signal<boolean>(true);
 
   //Formularios
 
@@ -23,12 +23,6 @@ export class LoginComponent {
 
 
   fbRegister:FormGroup = this.formBuilder.group({});
-
-
-
-
-
-
 
 
   onLogin() {
