@@ -8,6 +8,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 
 import { InventoryComponent } from './pages/inventory/inventory.component'
 import { AuthLayoutComponent } from './auth/layout/auth-layout/auth-layout.component';
+import { Error404Component } from './pages/error404/error404.component';
 import { NotAuthenticatedGuard } from './auth/guards/not-authenticated.guard';
 import { isGeneralAuthenticatedGuard } from './guards/isGeneralAuthenticated.guard';
 export const routes: Routes = [
@@ -38,6 +39,7 @@ export const routes: Routes = [
       { path: 'solicitudes', component: RequestComponent },
       { path: 'perfil-usuario', component: UserProfileComponent },
       { path: 'inventario', component: InventoryComponent },
+      { path: '**', component: Error404Component },
     ],
   },
   {
