@@ -1,6 +1,6 @@
 import { Component, output, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { passwordRegisterValidator } from '../../utils/FormsValidations/registerValidators';
+import { passwordValidator } from '../../utils/FormsValidations/authValidators';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class RegisterComponent {
     rut:["",[Validators.required,Validators.pattern(/\b[0-9|.]{1,10}\-[K|k|0-9]/gmi)]],
     carrera:["",[Validators.required]],
     telefono:["",[Validators.required,Validators.minLength(9)]],
-    contrasena:["",[Validators.required,Validators.minLength(5),passwordRegisterValidator()]]
+    contrasena:["",[Validators.required,Validators.minLength(5),passwordValidator()]]
   });
 
    //Emitir valor de register
@@ -41,8 +41,5 @@ export class RegisterComponent {
     console.log(this.fbRegister.value);
     this.authService.registerUser(this.fbRegister.value);
   }
-
-
-
 
 }

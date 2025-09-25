@@ -2,12 +2,13 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 
 
-export function passwordRegisterValidator(): ValidatorFn{
+export function passwordValidator(): ValidatorFn{
 
   return (control:AbstractControl): ValidationErrors | null => {
 
-    const controlValue = control.value.toString();
-    if (controlValue === null || controlValue === '') {
+    const controlValue = (control.value != null)? control.value.toString():null;
+
+    if(controlValue == "" || controlValue == null){
       return null;
     }
 
