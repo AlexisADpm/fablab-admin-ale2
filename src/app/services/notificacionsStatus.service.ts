@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
-export class NotificacionsService {
+export class NotificacionsStatusService {
 
   //Atributos
   statusTextMessage = signal<string>("");

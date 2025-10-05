@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { ErrorComponent } from '../../shared/error-component/error-component.component';
 import { DatePipe } from '@angular/common';
 import { StatusMessageComponent } from "../../shared/status-message/status-message.component";
-import { NotificacionsService } from '../../services/notificacions.service';
+import { NotificacionsStatusService } from '../../services/notificacionsStatus.service';
 
 @Component({
   selector: 'app-news',
@@ -17,7 +17,7 @@ export class NewsComponent {
   //Inyectar Servicios
   newsService = inject(NewsService);
   Renderer2 = inject(Renderer2);
-  notificacionsService = inject(NotificacionsService);
+  notificacionsStatusService = inject(NotificacionsStatusService);
 
   //Atributos
 
@@ -31,12 +31,12 @@ export class NewsComponent {
   };
 
   //Mensaje de estado para mensajes, se puede expandir logica a error
-  statusMessage = computed(()=> (this.notificacionsService.statusMessage())?true:false);
+  statusMessage = computed(()=> (this.notificacionsStatusService.statusMessage())?true:false);
 
   //Effecto para aparicion de mensaje de estado
   statusEffect = effect(()=>{
     if(this.statusMessage()){
-      this.notificacionsService.showMessage();
+      this.notificacionsStatusService.showMessage();
       return;
     }
   });

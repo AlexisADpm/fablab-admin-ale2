@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { News } from '../interfaces/news.interface';
 import { catchError, finalize, map, Observable, of, pipe, tap } from 'rxjs';
-import { NotificacionsService } from './notificacions.service';
+import { NotificacionsStatusService } from './notificacionsStatus.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -10,7 +10,7 @@ export class NewsService {
 
   //Servicios
   private httpclient = inject(HttpClient);
-  private notificacionsService = inject(NotificacionsService);
+  private notificacionsService = inject(NotificacionsStatusService);
 
   //News data
   newsResponse = signal<News[]>([]);
