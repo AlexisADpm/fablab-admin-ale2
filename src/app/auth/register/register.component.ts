@@ -10,6 +10,8 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent {
 
+  
+
   //Servicios
   formBuilder = inject(FormBuilder);
   authService = inject(AuthService);

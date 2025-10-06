@@ -17,18 +17,21 @@ export class ModalComponentComponent {
   @Output() decline = new EventEmitter<void>();
   @Output() close = new EventEmitter<void>();
 
+  // La lógica para cerrar el modal (this.show = false)
+  // DEBE ser manejada por el componente padre a través de los outputs.
+  
   onAccept() {
     this.accept.emit();
-    this.show = false;
   }
 
   onDecline() {
-    this.decline.emit();
-    this.show = false;
+    // Si no hay texto de rechazo, asumimos que no hay botón.
+    if (this.declineText) {
+      this.decline.emit();
+    }
   }
 
   onClose() {
     this.close.emit();
-    this.show = false;
   }
 }
