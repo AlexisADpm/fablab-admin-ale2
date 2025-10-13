@@ -5,6 +5,8 @@ import {
   signal,
 } from '@angular/core';
 import { UsersService } from '../../services/users.service';
+import { UsersInterface } from '../../interfaces/users.interface';
+import { NotificacionsStatusService } from '../../services/notificacionsStatus.service';
 
 @Component({
   selector: 'users',
@@ -14,16 +16,28 @@ import { UsersService } from '../../services/users.service';
 })
 export class UsersComponent {
   usersService = inject(UsersService);
+  notificacionStatusService = inject(NotificacionsStatusService);
 
   paginaActual = signal<number>(1);
   usuariosPorPagina: number = 5;
 
-  constructor() {}
 
   // Ejemplos para pruebas
-  editarUsuario(id: number) {
-    this.usersService.editarUsuario(id);
+  editarUsuario(id: number, dataUserForm: UsersInterface) {
+    this.usersService.editarUsuario(id,dataUserForm).subscribe(
+      (status) => {
+        if(status){
+          this.notificacionStatusService.showMessage();
+          return;
+        }
+      }
+    );
   }
+
+
+
+
+
 
   eliminarUsuario(id: number) {
     this.usersService.eliminarUsuario(id);
