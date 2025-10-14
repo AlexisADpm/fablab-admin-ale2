@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './modal-component.component.html',
 })
 export class ModalComponentComponent {
-
   //Atributos
 
   //Parametros de entrada
@@ -21,7 +20,6 @@ export class ModalComponentComponent {
   @Output() accept = new EventEmitter<void>();
   @Output() decline = new EventEmitter<void>();
   @Output() close = new EventEmitter<void>();
-
 
   onAccept() {
     this.accept.emit();
