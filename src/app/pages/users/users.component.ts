@@ -1,26 +1,39 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
   signal,
 } from '@angular/core';
 import { UsersService } from '../../services/users.service';
-import { UsersInterface } from '../../interfaces/users.interface';
-import { NotificacionsStatusService } from '../../services/notificacionsStatus.service';
+import { ModalComponentComponent } from '../../shared/modal-component/modal-component.component';
+import { BuscadorComponent } from '../../shared/searcher/searcher.component';
+import { PaginationService } from '../../services/pagination.service';
+import { PaginationComponent } from '../../shared/pagination/pagination.component';
 
 @Component({
   selector: 'users',
-  imports: [],
+  imports: [ModalComponentComponent, BuscadorComponent, PaginationComponent],
   templateUrl: './users.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersComponent {
   usersService = inject(UsersService);
+  paginationService = inject(PaginationService);
   notificacionStatusService = inject(NotificacionsStatusService);
 
-  paginaActual = signal<number>(1);
-  usuariosPorPagina: number = 5;
+  constructor() {
+    // Effect se encarga de estar atento por si una de las signal dentro de el cambian
 
+    effect(() => {
+      // Si 'usuariosBuscados()' cambia, el effect hara 2 cosas:
+
+      // 1. Alimenta al Cerebro(paginationService): Pasa la nueva lista filtrada a PaginationService.
+      this.paginationService.setDataList(this.usersService.usuariosBuscados()); // Aqui se ponen los datos que vamos a trabajar a travez del servicio
+
+      // 2. Resetea el Estado: Le pide al cerebro que vuelva a la página 1.
+      this.paginationService.goToPage(1);
+    });
 
   // Ejemplos para pruebas
   editarUsuario(id: number, dataUserForm: UsersInterface) {
@@ -44,59 +57,48 @@ export class UsersComponent {
   }
 
   // ---------------------------
-  // Paginacion
+  // Buscador
   // ---------------------------
-  totalPages(): number {
-    const totalUsuarios = this.usersService.usuariosBuscados().length;
-    return Math.ceil(totalUsuarios / this.usuariosPorPagina); // total / 5
+
+  onBuscador(termino: string) {
+    this.usersService.buscarTermino.set(termino);
   }
 
-  usuariosPaginados() {
-    //Obtenemos la lista completa de usuarios
-    const listaCompleta = this.usersService.usuariosBuscados();
+  // ---------------------------
+  // Modal
+  // ---------------------------
+  //Abrir modal de confirmacion
+  // openModal(mode: 'edit' | 'delete', id: number) {
+  //   this.modalMode = mode;
+  //   this.isModalOpen = true;
+  //   if (this.modalMode == 'edit') {
+  //     //Si estamos en modo editar llamamos a la funcion editar del servicio
+  //     console.log('Abrimos el modal en modo edicion');
+  //     this.usersService.editarUsuario(id);
+  //   } else if (this.modalMode === 'delete') {
+  //     //Si estamos en modo delete llamamos a la funcion delete del servicio
+  //     console.log('Modal en modo eliminacion');
+  //     this.usersService.eliminarUsuario(id);
+  //   }
+  // }
 
-    // Calculamos el inicio y fin del pedaso que se mostrara
-    const start = (this.paginaActual() - 1) * this.usuariosPorPagina;
-    const end = start + this.usuariosPorPagina;
+  // //Cerrar modal de confirmacion
+  // closeModal() {
+  //   this.isModalOpen = false;
+  // }
 
-    // Devolvemos solo la porción de la página actual
-    return listaCompleta.slice(start, end);
-  }
-
-  paginasCompactas(): number[] {
-    const total = this.totalPages();
-    const actual = this.paginaActual();
-    const delta = 2; // Cuántos botones antes y después del actual
-
-    const range: number[] = [];
-
-    for (let i = 1; i <= total; i++) {
-      if (
-        i === 1 ||
-        i === total ||
-        (i >= actual - delta && i <= actual + delta)
-      ) {
-        range.push(i);
-      }
-    }
-
-    // Insertar puntos suspensivos donde haya saltos
-    const compact: number[] = [];
-    let prev = 0;
-    for (let num of range) {
-      if (prev && num - prev > 1) {
-        compact.push(-1); // -1 representará "..."
-      }
-      compact.push(num);
-      prev = num;
-    }
-
-    return compact;
-  }
-
-  irAPagina(pagina: number) {
-    if (pagina >= 1 && pagina <= this.totalPages()) {
-      this.paginaActual.set(pagina);
-    }
-  }
+  // manejarAceptar(modalMode: string): void {
+  //   if (modalMode === 'edit') {
+  //     // Si estamos editando, llamamos a la función de guardado de los cambios
+  //     console.log('Aceptamos los cambios en la edicion de usuario');
+  //     this.closeModal();
+  //   } else if (modalMode === 'delete') {
+  //     // Si estamos eliminando, llamamos a la función de eliminación
+  //     console.log('Eliminamos el usuario desde el user component');
+  //     this.closeModal();
+  //   } else {
+  //     // Si estamos en modo 'view' o cualquier otro, simplemente cerramos
+  //     this.closeModal();
+  //   }
+  // }
 }
