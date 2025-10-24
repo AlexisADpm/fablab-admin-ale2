@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './modal-component.component.html',
 })
 export class ModalComponentComponent {
-
   //Atributos
 
   //Parametros de entrada

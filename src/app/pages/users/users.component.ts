@@ -1,112 +1,61 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
   signal,
 } from '@angular/core';
 import { UsersService } from '../../services/users.service';
-import { UsersInterface } from '../../interfaces/users.interface';
+import { PaginationService } from '../../services/pagination.service';
+import { PaginationComponent } from '../../shared/pagination/pagination.component';
 import { NotificacionsStatusService } from '../../services/notificacionsStatus.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ModalEditComponent } from "../../shared/modal-edit/modal-edit.component";
 
 @Component({
   selector: 'users',
-  imports: [],
+  imports: [PaginationComponent, ReactiveFormsModule, ModalEditComponent],
   templateUrl: './users.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersComponent {
+  //Servicios
   usersService = inject(UsersService);
+  paginationService = inject(PaginationService);
   notificacionStatusService = inject(NotificacionsStatusService);
+  formbuilder = inject(FormBuilder);
 
-  paginaActual = signal<number>(1);
-  usuariosPorPagina: number = 5;
+  //Atributos
+  modalView = signal<boolean>(false);
+  modalId = signal<number>(0);
 
-
-
-
-
-
-
-
-  //TODO: Injectar router, crear formulario de actualizacion
-  // Ejemplos para pruebas
-  editarUsuario(id: number, dataUserForm: UsersInterface) {
-
-    //TODO: Validacion de formulario
-
-    this.usersService.editarUsuario(id,dataUserForm).subscribe(
-      (status) => {
-        if(status){
-          this.notificacionStatusService.showMessage();
-          return;
-        }
-      }
-    );
-  }
-
-
-
-
-
-
-  eliminarUsuario(id: number) {
-    this.usersService.eliminarUsuario(id);
-  }
-
-  // ---------------------------
-  // Paginacion
-  // ---------------------------
-  totalPages(): number {
-    const totalUsuarios = this.usersService.usuariosBuscados().length;
-    return Math.ceil(totalUsuarios / this.usuariosPorPagina); // total / 5
-  }
-
-  usuariosPaginados() {
-    //Obtenemos la lista completa de usuarios
-    const listaCompleta = this.usersService.usuariosBuscados();
-
-    // Calculamos el inicio y fin del pedaso que se mostrara
-    const start = (this.paginaActual() - 1) * this.usuariosPorPagina;
-    const end = start + this.usuariosPorPagina;
-
-    // Devolvemos solo la porción de la página actual
-    return listaCompleta.slice(start, end);
-  }
-
-  paginasCompactas(): number[] {
-    const total = this.totalPages();
-    const actual = this.paginaActual();
-    const delta = 2; // Cuántos botones antes y después del actual
-
-    const range: number[] = [];
-
-    for (let i = 1; i <= total; i++) {
-      if (
-        i === 1 ||
-        i === total ||
-        (i >= actual - delta && i <= actual + delta)
-      ) {
-        range.push(i);
-      }
+  fbUser: FormGroup = this.formbuilder.group(
+    {
+      "test":[""],
+      "test2":[""]
     }
+  )
 
-    // Insertar puntos suspensivos donde haya saltos
-    const compact: number[] = [];
-    let prev = 0;
-    for (let num of range) {
-      if (prev && num - prev > 1) {
-        compact.push(-1); // -1 representará "..."
-      }
-      compact.push(num);
-      prev = num;
-    }
+  constructor() {
+    effect(() => {
+      //Alimenta (paginationService): Pasa la nueva lista filtrada a PaginationService.
+      this.paginationService.setDataList(this.usersService.usuariosBuscados()); // Aqui se ponen los datos que vamos a trabajar a travez del servicio
 
-    return compact;
+      //Resetea el Estado: Le pide al cerebro que vuelva a la página 1.
+      this.paginationService.goToPage(1);
+    });
+    console.log(this.usersService.usuariosData());
   }
 
-  irAPagina(pagina: number) {
-    if (pagina >= 1 && pagina <= this.totalPages()) {
-      this.paginaActual.set(pagina);
-    }
+  //Metodos
+  dataForm(data: Object){
+    console.log(data);
   }
+
+  modalEditView(id:number){
+    this.modalId.set(id);
+    (!this.modalView())?this.modalView.set(true):this.modalView.set(false);
+
+  }
+
 }

@@ -1,0 +1,6 @@
+<form [formGroup]="fbEdit()!" (ngSubmit)="emitForm()">
+  @for (controlName of formKeys(fbEdit()!); track $index) {
+    <input class="bg-amber-300" type="text" formControlName="{{controlName}}">
+  }
+  <button type="submit" class="cursor-pointer">Subir cambios</button>
+</form>
