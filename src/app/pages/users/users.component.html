@@ -108,7 +108,7 @@
 @if(modalView()) {
 <modal-edit
   [fbEdit]="fbUser"
-  (fbEditSend)="dataForm($event)"
+  (fbEditSend)="dataFormPut($event)"
   (closeModal)="modalView.set($event)"
   [modalTitle]="'Editar usuario'"
 ></modal-edit>

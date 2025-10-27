@@ -23,6 +23,7 @@ export class UsersService {
   // ----Logica del buscador de usuarios---
 
   // Signal Computada que aplica el filtro de búsqueda
+  //Todo: cambiar nombre
   usuariosBuscados = computed(() => {
     // Obtenemos la lista base original
     let listaBase = this.usuariosData();
@@ -69,7 +70,7 @@ export class UsersService {
   }
 
   //Put de obtencion de usuarios
-  editarUsuario(id: number,dataUser: UsersInterface): Observable<boolean> {
+  editarUsuario(id: number,dataUser: any): Observable<boolean> {
     return this.httpClient.put(`http://localhost:5263/api/usuarios/${id}`,dataUser)
     .pipe(
       map(()=> {
@@ -88,5 +89,19 @@ export class UsersService {
   eliminarUsuario(id: number) {
     console.log('UsersService: eliminarUsuario ejecutado', id);
   }
+
+  searchUserForId(id: number): UsersInterface | void{
+
+    if(this.usuariosData().length == 0){
+      return;
+    }
+    const usuarioBuscado = this.usuariosData().find(user => user.id_usuario == id);
+    return usuarioBuscado;
+
+  }
+
+
+
+
 }
 

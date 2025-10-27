@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   effect,
   inject,
@@ -11,31 +10,33 @@ import { PaginationComponent } from '../../shared/pagination/pagination.componen
 import { NotificacionsStatusService } from '../../services/notificacionsStatus.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ModalEditComponent } from '../../shared/modal-edit/modal-edit.component';
+import { Router } from '@angular/router';
+import { UsersToApi } from '../../utils/mappers/usersMapper';
 
 @Component({
   selector: 'users',
   imports: [PaginationComponent, ReactiveFormsModule, ModalEditComponent],
   templateUrl: './users.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UsersComponent {
+export class UsersComponent{
   //Servicios
   usersService = inject(UsersService);
   paginationService = inject(PaginationService);
   notificacionStatusService = inject(NotificacionsStatusService);
   formbuilder = inject(FormBuilder);
+  router = inject(Router);
 
   //Atributos
   modalView = signal<boolean>(false);
   modalId = signal<number>(0);
 
+  //FB en base a WEB API
   fbUser: FormGroup = this.formbuilder.group({
-    Nombre: [''],
-    Apellido: [''],
-    Correo: [''],
-    Rut: [''],
-    Carrera: [''],
-    Rol: [''],
+    nombre: ['a'],
+    apellido: ['b'],
+    email: ['c'],
+    rut: ['d'],
+    carrera: ['e'],
   });
 
   constructor() {
@@ -50,12 +51,32 @@ export class UsersComponent {
   }
 
   //Metodos
-  dataForm(data: Object) {
-    console.log(data);
+  //Todo: Investigar implementacion de genericos
+  dataFormPut(data: any): void {
+    if(!data){
+      return;
+    }
+
+    //Mapeamos la data a la respuesta
+    const dataRequest = UsersToApi(data);
+
+    this.usersService.editarUsuario(this.modalId(),dataRequest).subscribe((status) =>
+      {
+        if(status){
+          this.router.navigateByUrl("/usuarios");
+          return;
+        }
+      }
+    );
+
   }
 
+  //Abre modal de edicion y coloca valores de usuario.
   modalEditView(id: number) {
     this.modalId.set(id);
+    const userFind = this.usersService.searchUserForId(id);
+    //Todo: crear mapper de vuelta
+    this.fbUser.patchValue(userFind!);
     !this.modalView() ? this.modalView.set(true) : this.modalView.set(false);
   }
 

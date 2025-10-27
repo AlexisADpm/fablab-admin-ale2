@@ -3,7 +3,7 @@ import { UserResponse } from "../responses/userResponse";
 import { projectApiToProjectsArray, projectsApiToProjects } from "./projectsMapper";
 
 
-//Este mapea los objetos
+//Este mapea los objetos del api a users
 export function UsersApitoUsers(responseDataUser: UserResponse): UsersInterface{
 
   return {
@@ -17,6 +17,20 @@ export function UsersApitoUsers(responseDataUser: UserResponse): UsersInterface{
   }
 
 }
+
+export function UsersToApi(dataUser: UsersInterface): Object{
+
+
+  return {
+    nombre: dataUser.nombre,
+    apellido: "",
+    rut: dataUser.rut,
+    correoInstitucional: dataUser.email,
+    carrera: dataUser.carrera
+  }
+
+}
+
 
 
 //Este mapea a array
