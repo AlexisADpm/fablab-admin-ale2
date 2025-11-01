@@ -8,7 +8,8 @@ export function UsersApitoUsers(responseDataUser: UserResponse): UsersInterface{
 
   return {
     id_usuario : responseDataUser.id,
-    nombre: `${responseDataUser.nombre} ${responseDataUser.apellido}`,
+    nombre: responseDataUser.nombre,
+    apellido: responseDataUser.apellido,
     rut: responseDataUser.rut,
     carrera: responseDataUser.carrera,
     email: responseDataUser.correoInstitucional,
@@ -23,7 +24,7 @@ export function UsersToApi(dataUser: UsersInterface): Object{
 
   return {
     nombre: dataUser.nombre,
-    apellido: "",
+    apellido: dataUser.apellido,
     rut: dataUser.rut,
     correoInstitucional: dataUser.email,
     carrera: dataUser.carrera

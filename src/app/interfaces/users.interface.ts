@@ -3,6 +3,7 @@ import { ProjectsInterface } from "./projects.interface";
 export interface UsersInterface {
   id_usuario: number;
   nombre: string;
+  apellido: string;
   rut: string;
   carrera: string;
   email: string;

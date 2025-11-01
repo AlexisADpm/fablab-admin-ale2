@@ -5,6 +5,7 @@ import { catchError, finalize, map, Observable, of, tap } from 'rxjs';
 import { UserResponse } from '../utils/responses/userResponse';
 import { UserApiToUsersArray } from '../utils/mappers/usersMapper';
 import { NotificacionsStatusService } from './notificacionsStatus.service';
+import { rxResource } from '@angular/core/rxjs-interop';
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +20,16 @@ export class UsersService {
 
   //Palabra clave para busqueda
   buscarTermino = signal<string>('');
+
+  //RxResource para data de usuarios
+  dataUsersResource = rxResource({
+    loader: ()=>{
+      return this.obtenerUsuarios();
+    }
+  })
+
+
+
 
   // ----Logica del buscador de usuarios---
 
@@ -45,28 +56,18 @@ export class UsersService {
 
 
   //Get de obtencion de usuarios
-  obtenerUsuarios() {
+  obtenerUsuarios(): Observable<boolean> {
     return this.httpClient
     .get<UserResponse[]>('http://localhost:5263/api/usuarios')
     .pipe(
       map((users) => {
         console.log(users);
-        return UserApiToUsersArray(users);
+        this.usuariosData.set(UserApiToUsersArray(users))
+        return true;
       }),
-      tap((users) => this.usuariosData.set(users)),
-      finalize(() => console.log())
+      catchError(() => of(false))
     )
-    .subscribe({
-      next: () => {
-        console.log('Usuarios Correcto');
-      },
-      error: (err) => {
-        console.log('Hubo un error', err);
-      },
-      complete: () => {
-        console.log('Se completo la peticion');
-      },
-    });
+
   }
 
   //Put de obtencion de usuarios

@@ -50,6 +50,8 @@ export class CreatorNewComponent {
     this.newsService.postNew(newPost).subscribe((status)=>{
       if(status){
         this.router.navigateByUrl("/noticias");
+        this.notificacionsStatusService.showMessage();
+
       }
     })
   }

@@ -60,7 +60,6 @@ export class NewsService {
   }
 
   //Creacion de noticia
-  //TODO: Conversar si transformar a observable boolean
   postNew(news: News): Observable<boolean>{
 
     if(this.newsLoading()){
@@ -72,7 +71,7 @@ export class NewsService {
     return this.httpclient.post("http://localhost:5263/api/noticias",news).pipe(
       map(()=> {
         this.notificacionsService.statusMessage.set(true);
-        this.notificacionsService.statusTextMessage.set("Estado de noticia actualizado");
+        this.notificacionsService.statusTextMessage.set("Noticia creada correctamente");
         return true;
       }),
       finalize(()=> this.newsLoading.set(false)),

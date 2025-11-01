@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { SuccessComponent } from '../../../../../../shared/success-component/success-component.component';
 import { ModalComponentComponent } from '../../../../../../shared/modal-component/modal-component.component';
 import { Router } from '@angular/router';
+import { NotificacionsStatusService } from '../../../../../../services/notificacionsStatus.service';
 
 @Component({
   selector: 'updatenew',
@@ -17,6 +18,7 @@ export class UpdatenewComponent implements OnInit{
   formbuilder = inject(FormBuilder);
   NewsService = inject(NewsService);
   renderer2 = inject(Renderer2);
+  notificacionsStatusService = inject(NotificacionsStatusService);
   router = inject(Router);
 
   //Atributos
@@ -62,6 +64,7 @@ export class UpdatenewComponent implements OnInit{
       if(status){
         this.statusOutput.emit(true);
         this.router.navigateByUrl("/noticias");
+        this.notificacionsStatusService.showMessage();
         return;
       }
     });

@@ -12,19 +12,19 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ModalEditComponent } from '../../shared/modal-edit/modal-edit.component';
 import { Router } from '@angular/router';
 import { UsersToApi } from '../../utils/mappers/usersMapper';
+import { StatusMessageComponent } from '../../shared/status-message/status-message.component';
 
 @Component({
   selector: 'users',
-  imports: [PaginationComponent, ReactiveFormsModule, ModalEditComponent],
+  imports: [PaginationComponent, ReactiveFormsModule, ModalEditComponent,StatusMessageComponent],
   templateUrl: './users.component.html',
 })
 export class UsersComponent{
   //Servicios
   usersService = inject(UsersService);
   paginationService = inject(PaginationService);
-  notificacionStatusService = inject(NotificacionsStatusService);
+  notificationStatusService = inject(NotificacionsStatusService);
   formbuilder = inject(FormBuilder);
-  router = inject(Router);
 
   //Atributos
   modalView = signal<boolean>(false);
@@ -32,11 +32,11 @@ export class UsersComponent{
 
   //FB en base a WEB API
   fbUser: FormGroup = this.formbuilder.group({
-    nombre: ['a'],
-    apellido: ['b'],
-    email: ['c'],
-    rut: ['d'],
-    carrera: ['e'],
+    nombre: [''],
+    apellido: [''],
+    email: [''],
+    rut: [''],
+    carrera: [''],
   });
 
   constructor() {
@@ -63,7 +63,9 @@ export class UsersComponent{
     this.usersService.editarUsuario(this.modalId(),dataRequest).subscribe((status) =>
       {
         if(status){
-          this.router.navigateByUrl("/usuarios");
+          this.usersService.dataUsersResource.reload();
+          this.notificationStatusService.showMessage();
+          console.log(this.notificationStatusService.statusTextMessage());
           return;
         }
       }
@@ -75,7 +77,7 @@ export class UsersComponent{
   modalEditView(id: number) {
     this.modalId.set(id);
     const userFind = this.usersService.searchUserForId(id);
-    //Todo: crear mapper de vuelta
+    console.log(userFind);
     this.fbUser.patchValue(userFind!);
     !this.modalView() ? this.modalView.set(true) : this.modalView.set(false);
   }

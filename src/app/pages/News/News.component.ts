@@ -33,16 +33,6 @@ export class NewsComponent {
   //Mensaje de estado para mensajes, se puede expandir logica a error
   statusMessage = computed(()=> (this.notificacionsStatusService.statusMessage())?true:false);
 
-  //Effecto para aparicion de mensaje de estado
-  statusEffect = effect(()=>{
-    if(this.statusMessage()){
-      this.notificacionsStatusService.showMessage();
-      return;
-    }
-  });
-
-
-
   constructor(){
     this.newsService.getNews();
   }

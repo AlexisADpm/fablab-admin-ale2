@@ -1,3 +1,18 @@
+@if(notificationStatusService.statusMessage()){
+  <status-message [messageDisplay]="notificationStatusService.statusTextMessage()"></status-message>
+}
+
+@if(modalView()) {
+<modal-edit
+  [fbEdit]="fbUser"
+  (fbEditSend)="dataFormPut($event)"
+  (closeModal)="modalView.set($event)"
+  [modalTitle]="'Editar usuario'"
+></modal-edit>
+}
+
+
+
 <div class="border-slate-800 flex flex-col gap-3">
   <!-- Header -->
   <div
@@ -37,7 +52,7 @@
                 alt="{{ usuario.nombre }}"
               />
               <div class="ml-3">
-                <div class="font-medium text-white">{{ usuario.nombre }}</div>
+                <div class="font-medium text-white">{{ usuario.nombre}} {{usuario.apellido}}</div>
                 <div class="text-xs text-gray-400">
                   {{ usuario.email || "sin_email@example.com" }}
                 </div>
@@ -105,11 +120,7 @@
   />
 </div>
 
-@if(modalView()) {
-<modal-edit
-  [fbEdit]="fbUser"
-  (fbEditSend)="dataFormPut($event)"
-  (closeModal)="modalView.set($event)"
-  [modalTitle]="'Editar usuario'"
-></modal-edit>
-}
+
+
+
+

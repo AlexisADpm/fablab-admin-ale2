@@ -6,6 +6,7 @@ import { UpdatenewComponent } from './components/updatenew/updatenew.component';
 import { SuccessComponent } from '../../../../shared/success-component/success-component.component';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { ModalComponentComponent } from "../../../../shared/modal-component/modal-component.component";
+import { NotificacionsStatusService } from '../../../../services/notificacionsStatus.service';
 
 @Component({
   selector: 'single-new',
@@ -19,6 +20,7 @@ export class SingleNewComponent implements OnInit{
   newsService = inject(NewsService);
   route = inject(ActivatedRoute);
   router = inject(Router);
+  notificacionsStatusService = inject(NotificacionsStatusService);
 
 
   //Atributos
@@ -63,6 +65,7 @@ export class SingleNewComponent implements OnInit{
     this.newsService.deleteNew(this.idNew()).subscribe((status)=>{
       if(status){
         this.router.navigateByUrl("/noticias");
+        this.notificacionsStatusService.showMessage();
         return;
       }
     });

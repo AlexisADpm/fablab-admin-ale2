@@ -44,7 +44,6 @@ export class SidebarComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.menuControllerObservable$ = this.observadorMenuChanges$!.subscribe((valor)=>{
-      console.log(valor,"desde el observable");
       this.hideContent(valor);
     });
 
@@ -52,7 +51,6 @@ export class SidebarComponent implements AfterViewInit {
 
 
   hideContent(valor:boolean):void {
-    console.log(this.menuActivate(),"desde esconder el menu");
     if(valor){
       this.render.addClass(this.sideMenu.nativeElement,"w-[0px]");
       this.render.addClass(this.navItems.nativeElement,"translate-x-[-100%]");

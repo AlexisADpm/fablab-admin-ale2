@@ -58,7 +58,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   //Emitir activacion del menu
   toggleMenuActivate() {
-    console.log(this.toggleMenuValue(), 'desde el emit');
     if (this.toggleMenuValue()) {
       this.toggleMenu.emit(this.toggleMenuValue());
       this.toggleMenuValue.set(false);
