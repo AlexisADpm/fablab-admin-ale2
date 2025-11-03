@@ -15,7 +15,7 @@ import { BuscadorComponent } from '../../shared/searcher/searcher.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectsTableComponent {
-  //Inyeccion de servicios
+  //Servicios
   projectsService = inject(ProjectsService);
   paginationService = inject(PaginationService);
 
@@ -56,4 +56,9 @@ export class ProjectsTableComponent {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
+
+  testData(){
+    console.log(this.projectsService.projectsData());
+  }
+
 }

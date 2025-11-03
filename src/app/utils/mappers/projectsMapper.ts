@@ -11,10 +11,10 @@ export function projectsApiToProjects(responseDataUser: ProjectsResponse): Proje
   return {
     id: responseDataUser.id,
     titulo: responseDataUser.titulo,
-    descripcionproyecto: responseDataUser.descripcionproyecto,
+    descripcionproyecto: responseDataUser.descripcionProyecto,
     categoria: responseDataUser.categoria,
-    areaaplicacion: responseDataUser.areaaplicacion,
-    fechainicio: responseDataUser.fechainicio,
+    areaaplicacion: responseDataUser.areaAplicacion,
+    fechainicio: responseDataUser.fechaInicio,
   }
 
 }

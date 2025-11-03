@@ -4,8 +4,8 @@ export interface ProjectsResponse {
   id:                  number;
   titulo:              string;
   categoria:           string;
-  descripcionproyecto: string;
-  areaaplicacion:      string;
-  fechainicio:         Date;
+  descripcionProyecto: string;
+  areaAplicacion:      string;
+  fechaInicio:         Date;
   usuarios: Array<UsersInterface>;
 }

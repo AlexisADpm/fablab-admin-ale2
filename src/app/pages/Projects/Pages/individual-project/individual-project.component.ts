@@ -12,12 +12,15 @@ import { ProjectsService } from '../../../../services/projects.service';
   standalone: true,
 })
 export class IndividualProjectComponent implements OnInit {
-  //Inyectar servicios
+  //Servicios
   projectsService = inject(ProjectsService);
+  route = inject(ActivatedRoute);
 
+  //Atributos
   proyecto: ProjectsInterface[] = dblocalproyectos;
   proyectoEncontrado?: ProjectsInterface;
 
+  //Ciclos de vida
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     console.log(this.proyecto);
@@ -25,8 +28,7 @@ export class IndividualProjectComponent implements OnInit {
     console.log(this.proyectoEncontrado);
   }
 
-  constructor(private route: ActivatedRoute) {}
-
+  //Metodos
   searchById(id: number): void {
     const objectFind = this.projectsService.projectsData().find(
       (proyecto) => proyecto.id === id

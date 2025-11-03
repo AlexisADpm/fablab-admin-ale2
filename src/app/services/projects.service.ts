@@ -18,17 +18,18 @@ export class ProjectsService {
   //Projects
   projectsData = signal<ProjectsInterface[]>([]);
 
-  constructor() {}
+  //TODO: Implementar rxResource para obtencion de data
 
   obtenerProyectos() {
     this.httpClient
       .get<ProjectsResponse[]>('http://localhost:5263/api/proyectos')
       .pipe(
         map((projects) => {
+          console.log(projects);
           return projectApiToProjectsArray(projects);
         }),
         tap((projects) => this.projectsData.set(projects)),
-        finalize(() => console.log('Recoleccion de data finalizada'))
+        finalize(() => console.log(this.projectsData()))
       )
       .subscribe({
         next: (response) => {

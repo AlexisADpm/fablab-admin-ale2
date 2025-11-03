@@ -50,7 +50,6 @@ export class UsersComponent {
       //Resetea el Estado: Le pide al cerebro que vuelva a la página 1.
       this.paginationService.goToPage(1);
     });
-    console.log(this.usersService.usuariosData());
   }
 
   //Metodos

@@ -52,15 +52,15 @@ export class NewProjectComponent {
     console.log(newProject);
 
     //Ejecucion de observable y activacion de estado de insercion
-    this.proyectsService.agregarProyecto(newProject)
-    .subscribe((status)=>{
-      if(status){
-        console.log(this.notificacionStatus.statusTextMessage());
-        this.notificacionStatus.showMessage();
-        this.router.navigateByUrl("/proyectos");
-        return;
-      }
-    });
+    // this.proyectsService.agregarProyecto(newProject)
+    // .subscribe((status)=>{
+    //   if(status){
+    //     console.log(this.notificacionStatus.statusTextMessage());
+    //     this.notificacionStatus.showMessage();
+    //     this.router.navigateByUrl("/proyectos");
+    //     return;
+    //   }
+    // });
 
 
   }
