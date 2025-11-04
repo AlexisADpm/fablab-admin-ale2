@@ -14,6 +14,7 @@ export class StatusMessageComponent {
 
   //Atributos
   messageDisplay = input<string>(this.notificationStatus.statusTextMessage());
+  messageDisplayError = input<string>(this.notificationStatus.statusErrorMessage());
   windowHeight = signal<number>(window.innerHeight-100);
 
 }

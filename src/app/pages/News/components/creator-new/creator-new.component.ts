@@ -2,7 +2,6 @@ import { Component, ElementRef, inject, Renderer2, ViewChild, viewChild } from '
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { News } from '../../../../interfaces/news.interface';
 import { NewsService } from '../../../../services/news.service';
-import { SuccessComponent } from "../../../../shared/success-component/success-component.component";
 import { CustomFormsValidations } from '../../../../utils/FormsValidations/CustomValidations';
 import { ModalComponentComponent } from "../../../../shared/modal-component/modal-component.component";
 import { NotificacionsStatusService } from '../../../../services/notificacionsStatus.service';

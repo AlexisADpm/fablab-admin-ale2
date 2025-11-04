@@ -1,8 +1,5 @@
 import { ProjectsResponse } from "./projectsResponse";
 
-
-//TODO: Refactorizar a nueva response
-
 export interface UserResponse {
   id:                  number;
   nombre:              string;

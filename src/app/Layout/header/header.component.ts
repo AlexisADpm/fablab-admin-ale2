@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   toggleMenuValue = signal<boolean>(true);
 
   //Ruta actual
-  rutaActual = signal<string[]>(['Inicio']);
+  actualRoute = signal<string[]>(['Inicio']);
 
   //Observara la ruta
   observerRoutes: Subscription | null = null;
@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         filter((events) => events instanceof NavigationEnd),
         map((route: NavigationEnd) => route.urlAfterRedirects)
       )
-      .subscribe((url) => this.rutaActual.set(url.split('/').slice(1)));
+      .subscribe((url) => this.actualRoute.set(url.split('/').slice(1)));
     const storedUser = localStorage.getItem('currentUser');
     if (storedUser) {
       this.user = JSON.parse(storedUser);

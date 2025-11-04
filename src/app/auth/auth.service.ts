@@ -11,26 +11,25 @@ import { rxResource } from '@angular/core/rxjs-interop';
 export class AuthService{
 
 
-//TODO:Estado de authenticacion (verificar)
   //Servicios
   private _httpClient = inject(HttpClient);
 
   //Atributos
   private _jwtToken = signal< TokenJwt | null >(null);
-  private _autenticacion = signal<boolean>(false);
+  private _autentication = signal<boolean>(false);
   userData = signal<UserResponseAuth | null>(null);
   registerLoader = signal<boolean>(false);
 
   //Getter de autenticacion
-  Autenticacion = computed(()=>{
-    if (this._autenticacion()){
+  Autentication = computed(()=>{
+    if (this._autentication()){
       return true;
     }
     return false;
   })
 
   //Verificar token de autenticacion en localstorage
-  revisarEstadoToken = rxResource({
+  checkTokenStatus = rxResource({
     loader: () => {
       return this.checkStatus();
     }
@@ -43,7 +42,7 @@ export class AuthService{
       tap((resp)=> {
         this.userData.set(resp.usuario);
         this._jwtToken.set(resp);
-        this._autenticacion.set(true);
+        this._autentication.set(true);
         localStorage.setItem("token",resp.token);
       }),
       map((resp)=> true),
@@ -87,7 +86,7 @@ export class AuthService{
       tap((resp)=> {
         this.userData.set(resp.usuario);
         this._jwtToken.set(resp);
-        this._autenticacion.set(true);
+        this._autentication.set(true);
         localStorage.setItem("token",resp.token);
       }),
       map((resp)=> true),
@@ -101,7 +100,7 @@ export class AuthService{
   //Cerrar sesion
   closeSesion(): void {
     this._jwtToken.set(null);
-    this._autenticacion.set(false);
+    this._autentication.set(false);
     this.userData.set(null);
     localStorage.removeItem("token");
   }

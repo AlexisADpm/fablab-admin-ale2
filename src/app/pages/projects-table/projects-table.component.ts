@@ -21,33 +21,33 @@ export class ProjectsTableComponent {
 
   constructor() {
     // Llamada de prueba al iniciar
-    this.projectsService.obtenerProyectos();
+    this.projectsService.getProjects();
   }
 
-  // 🧩 Métodos para probar desde botones
-  editarProyecto(id: number) {
-    this.projectsService.editarProyecto(id);
+  // Métodos para probar desde botones
+  editProject(id: number) {
+    this.projectsService.putProject(id);
   }
 
-  eliminarProyecto(id: number) {
-    this.projectsService.eliminarProyecto(id);
+  deleteProject(id: number) {
+    this.projectsService.deleteProject(id);
   }
 
   // ---------------------------
   // Paginacion
   // ---------------------------
 
-  listaProyectos: ProjectsInterface[] = dbProyectos;
+  projectsList: ProjectsInterface[] = dbProyectos;
   currentPage = 1;
   itemsPerPage = 5;
 
   get totalPages(): number {
-    return Math.ceil(this.listaProyectos.length / this.itemsPerPage);
+    return Math.ceil(this.projectsList.length / this.itemsPerPage);
   }
 
   get proyectosPaginados() {
     const start = (this.currentPage - 1) * this.itemsPerPage;
-    return this.listaProyectos.slice(start, start + this.itemsPerPage);
+    return this.projectsList.slice(start, start + this.itemsPerPage);
   }
 
   irAPagina(pagina: number) {

@@ -1,6 +1,4 @@
-@if (newsService.errorHandler()) {
-<error-component></error-component>
-} @if(newsService.newsLoading()){
+@if(newsService.newsLoading()){
 <h1 class="text-2xl">Cargando contenido...</h1>
 } @if(statusMessage()){
 <status-message

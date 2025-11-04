@@ -9,7 +9,7 @@ export const isGeneralAuthenticatedGuard: CanMatchFn = async (
 ) => {
   const authService = inject(AuthService);
   const router = inject(Router);
-  console.log("autenticado",authService.Autenticacion());
+  console.log("autenticado",authService.Autentication());
 
   const isAuthenticated = await firstValueFrom (authService.checkStatus());
 

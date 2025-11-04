@@ -79,12 +79,12 @@
   <!-- Modal -->
   <modal-component
     [show]="isModalOpen"
-    [title]="selectedSolicitud ? selectedSolicitud.titulo : ''"
-    [description]="selectedSolicitud ? selectedSolicitud.descripcion : ''"
+    [title]="selectedRequest ? selectedRequest.titulo : ''"
+    [description]="selectedRequest ? selectedRequest.descripcion : ''"
     acceptText="Aceptar"
     declineText="Rechazar"
-    (accept)="aceptarSolicitud(selectedSolicitud.id)"
-    (decline)="rechazarSolicitud(selectedSolicitud.id)"
+    (accept)="acceptRequest(selectedRequest.id)"
+    (decline)="deniedRequest(selectedRequest.id)"
     (close)="closeModal()"
   ></modal-component>
 </div>

@@ -50,27 +50,27 @@ throw new Error('Method not implemented.');
   ];
 
   isModalOpen = false;
-  selectedSolicitud: any = null;
+  selectedRequest: any = null;
 
   openModal(solicitud: any) {
-    this.selectedSolicitud = solicitud;
+    this.selectedRequest = solicitud;
     this.isModalOpen = true;
   }
 
   closeModal() {
     this.isModalOpen = false;
-    this.selectedSolicitud = null;
+    this.selectedRequest = null;
   }
 
   // Aceptar solicitud
-  aceptarSolicitud(id: number) {
+  acceptRequest(id: number) {
     const solicitud = this.solicitudes.find(s => s.id === id);
     if (solicitud) solicitud.estado = 'Aceptada';
     this.closeModal();
   }
 
   // Rechazar solicitud
-  rechazarSolicitud(id: number) {
+  deniedRequest(id: number) {
     const solicitud = this.solicitudes.find(s => s.id === id);
     if (solicitud) solicitud.estado = 'Rechazada';
     this.closeModal();

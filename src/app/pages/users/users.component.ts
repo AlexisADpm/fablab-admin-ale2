@@ -45,7 +45,7 @@ export class UsersComponent {
   constructor() {
     effect(() => {
       //Alimenta (paginationService): Pasa la nueva lista filtrada a PaginationService.
-      this.paginationService.setDataList(this.usersService.usuariosBuscados()); // Aqui se ponen los datos que vamos a trabajar a travez del servicio
+      this.paginationService.setDataList(this.usersService.searchUserByFilter()); // Aqui se ponen los datos que vamos a trabajar a travez del servicio
 
       //Resetea el Estado: Le pide al cerebro que vuelva a la página 1.
       this.paginationService.goToPage(1);
@@ -62,7 +62,7 @@ export class UsersComponent {
     //Mapeamos la data a la respuesta
     const dataRequest = UsersToApi(data);
 
-    this.usersService.editarUsuario(this.modalId(),dataRequest).subscribe((status) =>
+    this.usersService.putUsers(this.modalId(),dataRequest).subscribe((status) =>
       {
         if(status){
           this.usersService.dataUsersResource.reload();
@@ -77,7 +77,6 @@ export class UsersComponent {
   modalEditView(id: number) {
     this.modalId.set(id);
     const userFind = this.usersService.searchUserForId(id);
-    console.log(userFind);
     this.fbUser.patchValue(userFind!);
     !this.modalView() ? this.modalView.set(true) : this.modalView.set(false);
   }

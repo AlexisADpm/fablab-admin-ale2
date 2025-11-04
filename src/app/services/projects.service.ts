@@ -20,7 +20,7 @@ export class ProjectsService {
 
   //TODO: Implementar rxResource para obtencion de data
 
-  obtenerProyectos() {
+  getProjects() {
     this.httpClient
       .get<ProjectsResponse[]>('http://localhost:5263/api/proyectos')
       .pipe(
@@ -36,6 +36,7 @@ export class ProjectsService {
           console.log(response);
         },
         error: (err) => {
+
           console.log('Hubo un error en el ingreso del projectos', err);
         },
         complete: () => {
@@ -46,7 +47,7 @@ export class ProjectsService {
   }
 
   //Agregar proyecto con id de usuario
-  agregarProyecto(proyecto: ProjectsCreateInterface) {
+  postProject(proyecto: ProjectsCreateInterface) {
     return this.httpClient.post<ProjectsResponse[]>('http://localhost:5263/api/proyectos', proyecto)
       .pipe(
         map(()=> {
@@ -54,15 +55,19 @@ export class ProjectsService {
           this.notificationsService.statusTextMessage.set("Proyecto creado correctamente");
           return true;
         }),
-        catchError(()=> of(false))
+        catchError(()=> {
+          this.notificationsService.statusMessage.set(true);
+          this.notificationsService.statusErrorMessage.set("Error en la creación del proyecto");
+          return of(false)
+        })
       )
   }
 
-  editarProyecto(id: number) {
+  putProject(id: number) {
     console.log('ProjectsService: editarProyecto ejecutado', id);
   }
 
-  eliminarProyecto(id: number) {
+  deleteProject(id: number) {
     console.log('ProjectsService: eliminarProyecto ejecutado', id);
   }
 }

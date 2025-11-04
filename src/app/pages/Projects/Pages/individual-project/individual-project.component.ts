@@ -17,15 +17,15 @@ export class IndividualProjectComponent implements OnInit {
   route = inject(ActivatedRoute);
 
   //Atributos
-  proyecto: ProjectsInterface[] = dblocalproyectos;
-  proyectoEncontrado?: ProjectsInterface;
+  project: ProjectsInterface[] = dblocalproyectos;
+  projectoFound?: ProjectsInterface;
 
   //Ciclos de vida
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(this.proyecto);
+    console.log(this.project);
     this.searchById(id);
-    console.log(this.proyectoEncontrado);
+    console.log(this.projectoFound);
   }
 
   //Metodos
@@ -33,6 +33,6 @@ export class IndividualProjectComponent implements OnInit {
     const objectFind = this.projectsService.projectsData().find(
       (proyecto) => proyecto.id === id
     );
-    this.proyectoEncontrado = objectFind;
+    this.projectoFound = objectFind;
   }
 }

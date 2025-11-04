@@ -13,7 +13,7 @@ import { UsersService } from '../../../../services/users.service';
 })
 export class SummaryCardsComponent implements AfterViewInit {
 
-  //TODO: Crear servicio de metricas para servicios
+  //TODO: Crear servicio de metricas para servicios y cambiar a INGLES
 
   projectsService = inject(ProjectsService);
   usersService = inject(UsersService)
@@ -30,25 +30,25 @@ export class SummaryCardsComponent implements AfterViewInit {
   noticiasCount = 0;
 
   constructor(){
-    this.projectsService.obtenerProyectos();
-    this.usersService.obtenerUsuarios();
+    this.projectsService.getProjects();
+    this.usersService.getUsers();
     this.newsService.getNews();
     console.log(this.noticiasFinal());
 
     effect(()=>{
 
       const proyectos = this.projectsService.projectsData().length;
-      const usuarios = this.usersService.usuariosData().length;
+      const usuarios = this.usersService.usersData().length;
       const noticias = this.newsService.newsResponse();
       console.log(this.newsService.newsResponse());
       if (noticias){
         this.noticiasFinal.set(this.newsService.newsResponse().length);
         this.proyectosFinal.set(this.projectsService.projectsData().length);
-        this.usuariosFinal.set(this.usersService.usuariosData().length);
+        this.usuariosFinal.set(this.usersService.usersData().length);
 
         this.animateCount('proyectosCount',this.projectsService.projectsData().length);
         this.animateCount('noticiasCount',this.newsService.newsResponse().length);
-        this.animateCount('usuariosCount',this.usersService.usuariosData().length);
+        this.animateCount('usuariosCount',this.usersService.usersData().length);
       }
 
     })

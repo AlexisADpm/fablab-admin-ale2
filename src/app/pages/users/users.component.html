@@ -74,7 +74,7 @@
           <td class="px-4 py-4 text-gray-400">
             <div class="max-h-10 overflow-y-auto">
               <ol class="list-decimal list-inside text-xs">
-                @for (usuarios of usersService.usuariosData(); track $index) {
+                @for (usuarios of usersService.usersData(); track $index) {
                 @for (project of usuarios.proyectos_asignados; track $index) {
                 <li>{{ project.titulo }}</li>
                 } }

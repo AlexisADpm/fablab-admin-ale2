@@ -25,7 +25,7 @@ export class UserHomeComponent {
     this.newsService.getNews();
 
     //Obtener noticias
-    this.projectsService.obtenerProyectos();
+    this.projectsService.getProjects();
   }
 
   // Proyectos destacados simulados

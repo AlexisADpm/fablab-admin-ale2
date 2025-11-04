@@ -13,8 +13,6 @@ import { StatusMessageComponent } from '../../shared/status-message/status-messa
 })
 export class RegisterComponent {
 
-  
-
   //Servicios
   formBuilder = inject(FormBuilder);
   authService = inject(AuthService);

@@ -21,7 +21,7 @@ export class AllProjectsComponent {
 
   constructor(){
     //TODO: Implementar rxResource en el servicio
-    this.projectsService.obtenerProyectos();
+    this.projectsService.getProjects();
     console.log(this.projectsService.projectsData());
   }
 

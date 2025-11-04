@@ -2,14 +2,13 @@ import { Component, ElementRef, inject, input, OnInit, output, Renderer2, signal
 import { NewsService } from '../../../../../../services/news.service';
 import { News } from '../../../../../../interfaces/news.interface';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SuccessComponent } from '../../../../../../shared/success-component/success-component.component';
 import { ModalComponentComponent } from '../../../../../../shared/modal-component/modal-component.component';
 import { Router } from '@angular/router';
 import { NotificacionsStatusService } from '../../../../../../services/notificacionsStatus.service';
 
 @Component({
   selector: 'updatenew',
-  imports: [ReactiveFormsModule,SuccessComponent,ModalComponentComponent],
+  imports: [ReactiveFormsModule,ModalComponentComponent],
   templateUrl: './updatenew.component.html',
 })
 export class UpdatenewComponent implements OnInit{

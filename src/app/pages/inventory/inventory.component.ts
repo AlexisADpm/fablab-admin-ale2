@@ -294,10 +294,17 @@ export class InventoryComponent {
     console.log('Hola nerd');
   }
 
+  //TODO: Crear interfaz de inventario
+  dataFormPut(data: any){
+    console.log(data);
+  }
+
+
   get totalInsumos() {
     return this.insumos.length;
   }
 
+  //TODO: Cambiar a idioma ingles
   get bajoStock() {
     // Devolver cuántos insumos están en o por debajo de su stock mínimo
     return this.insumos.filter((p) => p.stock <= p.stockMin).length;

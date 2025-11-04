@@ -16,15 +16,15 @@ export class UsersService {
   notificationStatusService = inject(NotificacionsStatusService);
 
   //Data user de usuarios
-  usuariosData = signal<UsersInterface[]>([]);
+  usersData = signal<UsersInterface[]>([]);
 
   //Palabra clave para busqueda
-  buscarTermino = signal<string>('');
+  wordToSearch = signal<string>('');
 
   //RxResource para data de usuarios
   dataUsersResource = rxResource({
     loader: ()=>{
-      return this.obtenerUsuarios();
+      return this.getUsers();
     }
   })
 
@@ -35,10 +35,10 @@ export class UsersService {
 
   // Signal Computada que aplica el filtro de búsqueda
   //Todo: cambiar nombre
-  usuariosBuscados = computed(() => {
+  searchUserByFilter = computed(() => {
     // Obtenemos la lista base original
-    let listaBase = this.usuariosData();
-    const termino = this.buscarTermino().toLowerCase();
+    let listaBase = this.usersData();
+    const termino = this.wordToSearch().toLowerCase();
 
     // Aplicamos el filtro de búsqueda si el término no está vacío
     if (termino.length > 0) {
@@ -56,13 +56,13 @@ export class UsersService {
 
 
   //Get de obtencion de usuarios
-  obtenerUsuarios(): Observable<boolean> {
+  getUsers(): Observable<boolean> {
     return this.httpClient
     .get<UserResponse[]>('http://localhost:5263/api/usuarios')
     .pipe(
       map((users) => {
         console.log(users);
-        this.usuariosData.set(UserApiToUsersArray(users))
+        this.usersData.set(UserApiToUsersArray(users))
         return true;
       }),
       catchError(() => of(false))
@@ -71,7 +71,7 @@ export class UsersService {
   }
 
   //Put de obtencion de usuarios
-  editarUsuario(id: number,dataUser: any): Observable<boolean> {
+  putUsers(id: number,dataUser: any): Observable<boolean> {
     return this.httpClient.put(`http://localhost:5263/api/usuarios/${id}`,dataUser)
     .pipe(
       map(()=> {
@@ -87,16 +87,16 @@ export class UsersService {
     )
   }
 
-  eliminarUsuario(id: number) {
+  deleteUsers(id: number) {
     console.log('UsersService: eliminarUsuario ejecutado', id);
   }
 
   searchUserForId(id: number): UsersInterface | void{
 
-    if(this.usuariosData().length == 0){
+    if(this.usersData().length == 0){
       return;
     }
-    const usuarioBuscado = this.usuariosData().find(user => user.id_usuario == id);
+    const usuarioBuscado = this.usersData().find(user => user.id_usuario == id);
     return usuarioBuscado;
 
   }
