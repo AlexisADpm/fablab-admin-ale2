@@ -30,9 +30,9 @@ export class IndividualProjectComponent implements OnInit {
 
   //Metodos
   searchById(id: number): void {
-    const objectFind = this.projectsService.projectsData().find(
-      (proyecto) => proyecto.id === id
-    );
+    const objectFind = this.projectsService
+      .projectsData()
+      .find((proyecto) => proyecto.id === id);
     this.projectoFound = objectFind;
   }
 }

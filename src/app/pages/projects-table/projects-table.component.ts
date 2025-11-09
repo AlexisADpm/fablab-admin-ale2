@@ -1,7 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
-import dbProyectos from '../../data/dblocalproyectos.json';
-import { ProjectsInterface } from '../../interfaces/projects.interface';
 import { ProjectsService } from '../../../app/services/projects.service';
 import { PaginationComponent } from '../../shared/pagination/pagination.component';
 import { PaginationService } from '../../services/pagination.service';
@@ -13,7 +16,13 @@ import { StatusMessageComponent } from '../../shared/status-message/status-messa
 @Component({
   selector: 'gestion-proyectos',
   standalone: true,
-  imports: [NgFor, PaginationComponent, BuscadorComponent,ModalComponentComponent, StatusMessageComponent],
+  imports: [
+    NgFor,
+    PaginationComponent,
+    BuscadorComponent,
+    ModalComponentComponent,
+    StatusMessageComponent,
+  ],
   templateUrl: './projects-table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -24,7 +33,7 @@ export class ProjectsTableComponent {
   notificationStatusService = inject(NotificacionsStatusService);
 
   //Atributos
-  openDeleteView= signal<boolean>(false);
+  openDeleteView = signal<boolean>(false);
   projectModalId = signal<number | undefined>(undefined);
 
   constructor() {
@@ -32,14 +41,14 @@ export class ProjectsTableComponent {
     this.projectsService.getProjects();
   }
 
-  deleteProject(){
-    if(!this.projectModalId){
+  deleteProject() {
+    if (!this.projectModalId) {
       return;
     }
-    this.projectsService.deleteProject(this.projectModalId()!).subscribe((status) =>
-      {
-        if(status){
-
+    this.projectsService
+      .deleteProject(this.projectModalId()!)
+      .subscribe((status) => {
+        if (status) {
           this.notificationStatusService.showMessage();
           this.openDeleteView.set(false);
           return;
@@ -47,21 +56,13 @@ export class ProjectsTableComponent {
 
         this.notificationStatusService.showMessage();
         this.openDeleteView.set(false);
-
-
-      })
-
+      });
   }
 
-  modalDeleteView(id: number): void{
+  modalDeleteView(id: number): void {
     this.projectModalId.set(id);
-    this.openDeleteView()?this.openDeleteView.set(false):this.openDeleteView.set(true);
+    this.openDeleteView()
+      ? this.openDeleteView.set(false)
+      : this.openDeleteView.set(true);
   }
-
-
-
-
-
-
-
 }
