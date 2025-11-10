@@ -25,7 +25,6 @@ export class ProjectsService {
       .get<ProjectsResponse[]>('http://localhost:5263/api/proyectos')
       .pipe(
         map((projects) => {
-          console.log(projects);
           return projectApiToProjectsArray(projects);
         }),
         tap((projects) => this.projectsData.set(projects)),
@@ -46,9 +45,8 @@ export class ProjectsService {
   }
 
   //Agregar proyecto con id de usuario
-  postProject(proyecto: ProjectsCreateInterface) {
-    return this.httpClient
-      .post<ProjectsResponse[]>('http://localhost:5263/api/proyectos', proyecto)
+  postProject(proyecto: any) {
+    return this.httpClient.post<ProjectsResponse[]>('http://localhost:5263/api/proyectos', proyecto)
       .pipe(
         map(() => {
           this.notificationStatusService.statusMessage.set(true);

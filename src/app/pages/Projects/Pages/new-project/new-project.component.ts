@@ -1,18 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  inject,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  NgModel,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, Renderer2, signal, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProjectsService } from '../../../../services/projects.service';
 import { ProjectsInterface } from '../../../../interfaces/projects.interface';
 import { NotificacionsStatusService } from '../../../../services/notificacionsStatus.service';
@@ -35,6 +22,7 @@ export class NewProjectComponent {
   notificacionStatus = inject(NotificacionsStatusService);
 
   //Atributos
+  imageSelected = signal<File | null>(null);
   //TODO: Igualar validadores a los del backend
   newProjectForm: FormGroup = this.formbuilder.group({
     titulo: ['', [Validators.required, Validators.minLength(5)]],
@@ -44,19 +32,41 @@ export class NewProjectComponent {
     fechainicio: [''],
   });
 
-  submitNewProject(): void {
-    if (this.newProjectForm.invalid) {
+  //Metodos
+  imageFileSelected(event: Event): void{
+    const input = event.target as HTMLInputElement;
+
+    if (input.files!.length > 0){
+      this.imageSelected.set(input.files![0] as File);
+      console.log(this.imageSelected());
+      return;
+    }
+    this.imageSelected.set(null);
+  }
+
+  submitNewProject(): void{
+    if(this.newProjectForm.invalid){
       this.newProjectForm.reset();
       return;
     }
 
     //Creacion de proyecto
     const newProject: ProjectsCreateInterface = this.newProjectForm.value;
-    newProject.ids = [this.authService.userData()?.id!];
+    newProject.ids = [this.authService.userData()?.id_usuario!];
+
+    //Formulario multiparte
+    const formData = new FormData();
+
+    if(this.imageSelected() != null){
+      formData.append("ImgUrl", this.imageSelected()!, this.imageSelected()?.name);
+    }
+
+    formData.append("dataproject", JSON.stringify(this.newProjectForm.value));
 
     //Ejecucion de observable y activacion de estado de insercion
-    this.proyectsService.postProject(newProject).subscribe((status) => {
-      if (status) {
+    this.proyectsService.postProject(formData)
+    .subscribe((status)=>{
+      if(status){
         console.log(this.notificacionStatus.statusTextMessage());
         this.notificacionStatus.showMessage();
         this.router.navigateByUrl('/proyectos');
@@ -67,4 +77,6 @@ export class NewProjectComponent {
       this.router.navigateByUrl('/proyectos');
     });
   }
+
+
 }
