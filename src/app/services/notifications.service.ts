@@ -27,16 +27,15 @@ export class NotificationsService {
     loader: () => {
       return this.getRegisterNotifications();
     }
-  })
+  });
 
   //Metodos
-
   //Notificaciones de ingreso
   getRegisterNotifications(): Observable<boolean>{
     return this.httpClient.get<NotificationResponse[]>(`http://localhost:5263/api/notificaciones/ingreso`)
     .pipe(
       map((dataNotifications)=> {
-        this.notificationsData.update((data)=> [...data, ...notificationsApiToNotificationsArray(dataNotifications)]);
+        this.notificationsData.set(notificationsApiToNotificationsArray(dataNotifications));
         return true;
       }),
       //TODO: Implementar interfaz de error en base a asp net
@@ -52,12 +51,32 @@ export class NotificationsService {
     return this.httpClient.post(`http://localhost:5263/api/notificaciones/ingreso/${id}`,{})
     .pipe(
       map(()=> {
+        this.notificationStatusService.statusMessage.set(true);
+        this.notificationStatusService.statusTextMessage.set("Usuario añadido correctamente");
         return true;
       }),
       //TODO: Implementar interfaz de error en base a asp net
       catchError((err)=>{
         this.notificationStatusService.statusMessage.set(true);
-        this.notificationStatusService.statusErrorMessage.set(err.error.detail);
+        this.notificationStatusService.statusErrorMessage.set("Hubo un error al aceptar la solicitud");
+        return of(false);
+      })
+    );
+
+  }
+
+  deleteRegisterNotification(id:number): Observable<boolean>{
+    return this.httpClient.delete<NotificationResponse[]>(`http://localhost:5263/api/notificaciones/ingreso/${id}`)
+    .pipe(
+      map((dataNotifications)=> {
+        this.notificationStatusService.statusMessage.set(true);
+        this.notificationStatusService.statusTextMessage.set("Notificacion eliminada correctamente");
+        return true;
+      }),
+      //TODO: Implementar interfaz de error en base a asp net
+      catchError((err)=>{
+        this.notificationStatusService.statusMessage.set(true);
+        this.notificationStatusService.statusErrorMessage.set("Hubo un error al aceptar la solicitud");
         return of(false);
       })
     );

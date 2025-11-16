@@ -6,7 +6,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { DatePipe, NgFor, NgIf } from '@angular/common';
 import { ProjectsService } from '../../../app/services/projects.service';
 import { PaginationComponent } from '../../shared/pagination/pagination.component';
 import { PaginationService } from '../../services/pagination.service';
@@ -26,6 +26,7 @@ import { ProjectsInterface } from '../../interfaces/projects.interface';
     BuscadorComponent,
     ModalComponentComponent,
     StatusMessageComponent,
+    DatePipe
   ],
   templateUrl: './projects-table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -33,7 +34,6 @@ import { ProjectsInterface } from '../../interfaces/projects.interface';
 export class ProjectsTableComponent {
   //Servicios
   route = inject(ActivatedRoute);
-  private router = inject(Router);
   projectsService = inject(ProjectsService);
   paginationService = inject(PaginationService);
   notificationStatusService = inject(NotificacionsStatusService);
@@ -42,6 +42,10 @@ export class ProjectsTableComponent {
   //Atributos
   openDeleteView = signal<boolean>(false);
   projectModalId = signal<number | undefined>(undefined);
+  projectsData = this.projectsService.projectsResource.value();
+
+  loading = signal<boolean>(false);
+
 
   public filteredProjects = computed<ProjectsInterface[]>(() => {
     const term = this.searchTerm().toLowerCase();
@@ -92,21 +96,26 @@ export class ProjectsTableComponent {
   }
 
   deleteProject() {
-    console.log('Detele project', this.projectModalId());
 
-    if (!this.projectModalId) {
+    if (!this.projectModalId || this.loading()) {
       return;
     }
+
+    this.loading.set(true);
+
     this.projectsService
       .deleteProject(this.projectModalId()!)
       .subscribe((status) => {
         if (status) {
           this.openDeleteView.set(false);
-          this.router.navigate(['/gestion-proyectos']);
+          this.projectsService.projectsResource.reload();
+          this.notificationStatusService.showMessage();
+          this.loading.set(false);
           return;
         }
-
+        this.notificationStatusService.showMessage();
         this.openDeleteView.set(false);
+        this.loading.set(false);
       });
   }
 }
