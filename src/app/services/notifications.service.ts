@@ -26,11 +26,10 @@ export class NotificationsService {
   registerNotificationResource = rxResource({
     loader: () => {
       return this.getRegisterNotifications();
-    },
+    }
   });
 
   //Metodos
-
   //Notificaciones de ingreso
   getRegisterNotifications(): Observable<boolean> {
     return this.httpClient

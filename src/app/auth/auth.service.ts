@@ -13,12 +13,15 @@ import { environment } from '../../environments/environments';
 export class AuthService {
   //Servicios
   private _httpClient = inject(HttpClient);
+  private _notificationStatusService = inject(NotificacionsStatusService);
 
   //Atributos
-  public _jwtToken = signal<TokenJwt | null>(null);
+  private _jwtToken = signal< TokenJwt | null >(null);
+  tokenJWT = signal<string | null>(localStorage.getItem('token'))
   private _autentication = signal<boolean>(false);
   userData = signal<UsersInterface | null>(null);
   registerLoader = signal<boolean>(false);
+  loginLoader = signal<boolean>(false);
 
   private baseUrl = `${environment.apiKey}/api/autenticacion/usuarios`;
 
@@ -81,7 +84,7 @@ export class AuthService {
   checkStatus(): Observable<boolean> {
     const token = localStorage.getItem('token');
 
-    if (!token) {
+    if (!token){
       return of(false);
     }
 

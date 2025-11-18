@@ -16,6 +16,7 @@ export class NewsService {
 
   //Carga de noticias señal
   newsLoading = signal<boolean>(false);
+  postLoading = signal<boolean>(false);
   errorHandler = signal<string | undefined>(undefined);
 
   //Obtencion de noticias al inyectar servicios
@@ -24,8 +25,9 @@ export class NewsService {
   }
 
   //Metodo get news suscrito
-  getNews(): void {
-    if (this.newsLoading()) {
+  getNews(): void{
+     if(this.newsLoading()){
+      console.log("La peticion no puede cargar aun...");
       return;
     }
     this.newsLoading.set(true);
@@ -58,12 +60,13 @@ export class NewsService {
   }
 
   //Creacion de noticia
-  postNew(news: News): Observable<boolean> {
-    if (this.newsLoading()) {
+  postNew(news: News): Observable<boolean>{
+
+    if(this.postLoading()){
       return of(false);
     }
     //Cargando
-    this.newsLoading.set(true);
+    this.postLoading.set(true);
 
     return this.httpclient
       .post(`${environment.apiKey}/api/noticias`, news)

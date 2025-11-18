@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { ProjectsResponse } from '../utils/responses-interfaces/projectsResponse';
-import { catchError, finalize, map, of, tap } from 'rxjs';
+import { catchError, delay, finalize, map, Observable, of, single, tap } from 'rxjs';
 import { projectApiToProjectsArray } from '../utils/mappers/projectsMapper';
 import { ProjectsInterface } from '../interfaces/projects.interface';
 import { NotificacionsStatusService } from './notificacionsStatus.service';
@@ -18,8 +18,28 @@ export class ProjectsService {
 
   //Projects
   projectsData = signal<ProjectsInterface[]>([]);
+  postProjectLoader = signal<boolean>(false);
 
-  //TODO: Implementar rxResource para obtencion de data
+  projectsResource = rxResource({
+    loader: () => {
+      return this.getProjects();
+    }
+  })
+
+
+  getProjects(): Observable<boolean> {
+    return this.httpClient
+    .get<ProjectsResponse[]>('http://localhost:5263/api/proyectos')
+    .pipe(
+      map((projects) => {
+        console.log(projects);
+        this.projectsData.update(()=>projectApiToProjectsArray(projects));
+        return true;
+      }),
+      catchError((error)=> {
+        return of(false);
+      })
+    )
 
   getProjects() {
     this.httpClient
@@ -50,6 +70,7 @@ export class ProjectsService {
     return this.httpClient
       .post<ProjectsResponse[]>(`${environment.apiKey}/api/proyectos`, proyecto)
       .pipe(
+        delay(5000),
         map(() => {
           this.notificationStatusService.statusMessage.set(true);
           this.notificationStatusService.statusTextMessage.set(
@@ -63,7 +84,8 @@ export class ProjectsService {
             'Error en la creación del proyecto'
           );
           return of(false);
-        })
+        }),
+        finalize(()=> this.postProjectLoader.set(false))
       );
   }
 
@@ -86,10 +108,26 @@ export class ProjectsService {
         catchError((err) => {
           this.notificationStatusService.statusMessage.set(true);
           this.notificationStatusService.statusErrorMessage.set(
-            err.error.detail
+            "Se produjo un error al eliminar el proyecto"
           );
           return of(false);
         })
       );
   }
+
+  //Buscar proyecto
+  searchProjectById(id:number): ProjectsInterface | undefined{
+    console.log(this.projectsData());
+    if(this.projectsData().length == 0){
+      return;
+    }
+    if(this.projectsData().length == 0){
+      return;
+    }
+    const projectFound = this.projectsData().find(pro => pro.id == id);
+    console.log(projectFound);
+    return projectFound;
+  }
+
+
 }

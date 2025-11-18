@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, inject, signal } from '@angular/core';
 import { ModalComponentComponent } from '../../shared/modal-component/modal-component.component';
-import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { BuscadorComponent } from '../../shared/searcher/searcher.component';
 import { PaginationComponent } from '../../shared/pagination/pagination.component';
 import { PaginationService } from '../../services/pagination.service';
@@ -28,19 +28,22 @@ export class InventoryComponent {
   paginationService = inject(PaginationService);
   formbuilder = inject(FormBuilder);
   inventoryService = inject(InventoryService);
+  notificacionsStatusService = inject(NotificacionsStatusService);
 
   //Atributos
   modalView = signal<boolean>(false);
+  modalDelete = signal<boolean>(false);
   modalId = signal<number>(0);
   itemsCeroStockCount: number = 0;
   bajoStockCount: number = 0;
   totalInsumosCount: number = 0;
+  loading = signal<boolean>(false);
 
   fbInventory: FormGroup = this.formbuilder.group({
-    Nombre: [''],
-    Categoria: [''],
-    Stock: [''],
-    Ubicación: [''],
+    nombre: [''],
+    categoria: [''],
+    stock: ['',],
+    ubicacion: [''],
   });
 
   //Ciclos de vida
@@ -50,7 +53,6 @@ export class InventoryComponent {
 
   //Esto no lo eh entendido al 100%
   constructor() {
-    this.inventoryService.getInventoryItems().subscribe();
     effect(() => {
       const inventoryList = this.inventoryService.inventoryData();
       this.paginationService.setDataList(inventoryList);
@@ -66,24 +68,79 @@ export class InventoryComponent {
   // ---------- Modal ----------
 
   //Metodos
-  dataForm(data: Object) {
-    console.log(data);
+  dataFormPut(data: FormGroup) {
+    if(!data || this.loading() || !this.modalId()){
+      return;
+    }
+
+    this.loading.set(true);
+
+    this.fbInventory.patchValue(data.value);
+
+    this.inventoryService.putInventoryitem(data,this.modalId()).subscribe(
+      (status) => {
+        if(status){
+          this.loading.set(false);
+          this.notificacionsStatusService.showMessage();
+          this.inventoryService.inventoryResource.reload();
+          this.modalView.set(false);
+          return;
+
+        }
+        this.loading.set(false);
+        this.inventoryService.inventoryResource.reload();
+        this.modalView.set(false);
+        this.notificacionsStatusService.showMessage();
+      }
+    )
+
+
   }
 
-  modalEditView(id: number) {
+  dataFormDelete(){
+    if(this.loading() || !this.modalId()){
+      return;
+    }
+
+    this.loading.set(true);
+
+    this.inventoryService.deleteInventoryitem(this.modalId()).subscribe(
+      (status) => {
+        if(status){
+          this.loading.set(false);
+          this.notificacionsStatusService.showMessage();
+          this.inventoryService.inventoryResource.reload();
+          this.modalDelete.set(false);
+          return;
+        }
+        this.loading.set(false);
+        this.inventoryService.inventoryResource.reload();
+        this.notificacionsStatusService.showMessage();
+        this.modalDelete.set(false);
+
+      }
+    )
+
+
+
+
+  }
+
+  //Abrir modales
+  openModalEditView(id: number) {
     this.modalId.set(id);
-    !this.modalView() ? this.modalView.set(true) : this.modalView.set(false);
+    this.modalView.set(true);
+    const itemFound = this.inventoryService.searchItemForId(id);
+    this.fbInventory.patchValue(itemFound!);
   }
 
-  modalDeleteView() {
-    console.log('Hola nerd');
+  openModalDeleteView(id: number) {
+    this.modalId.set(id);
+    this.modalDelete.set(true);
   }
 
-  //TODO: Crear interfaz de inventario
-  dataFormPut(data: any) {
-    console.log(data);
-  }
 
+  //Metricas de animacion
   get totalInsumos() {
     return this.inventoryService.inventoryData().length;
   }
