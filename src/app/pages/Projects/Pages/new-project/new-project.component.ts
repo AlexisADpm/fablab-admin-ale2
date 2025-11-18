@@ -1,19 +1,17 @@
-import { ChangeDetectionStrategy, Component, ElementRef, inject, Renderer2, signal, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component,inject, signal,} from '@angular/core';
+import { FormBuilder, FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProjectsService } from '../../../../services/projects.service';
-import { ProjectsInterface } from '../../../../interfaces/projects.interface';
 import { NotificacionsStatusService } from '../../../../services/notificacionsStatus.service';
 import { ProjectsCreateInterface } from '../../../../utils/request-interfaces/projectsCreateInterface';
 import { AuthService } from '../../../../auth/auth.service';
 import { Router } from '@angular/router';
 import { BackButtonComponent } from '../../../../shared/back-button/back-button';
-import { StatusMessageComponent } from '../../../../shared/status-message/status-message.component';
 import { CustomFormsValidations } from '../../../../utils/FormsValidations/CustomValidations';
 
 @Component({
   selector: 'new-project',
   templateUrl: './new-project.component.html',
-  imports: [ReactiveFormsModule, BackButtonComponent, StatusMessageComponent],
+  imports: [ReactiveFormsModule, BackButtonComponent],
 })
 export class NewProjectComponent {
   //Inyeccion de servicios
@@ -49,13 +47,13 @@ export class NewProjectComponent {
 
   submitNewProject(): void{
     if(this.newProjectForm.invalid){
-      this.newProjectForm.reset();
+      this.newProjectForm.touched;
       return;
     }
 
     //Creacion de proyecto
     const newProject: ProjectsCreateInterface = this.newProjectForm.value;
-    newProject.ids = [this.authService.userData()?.id_usuario!];
+    newProject.ids = [this.authService.userData()!.id_usuario!];
 
     //Formulario multiparte
     const formData = new FormData();
@@ -73,7 +71,7 @@ export class NewProjectComponent {
     this.proyectsService.postProject(formData)
     .subscribe((status)=>{
       if(status){
-        this.proyectsService.projectsResource.reload();
+        this.proyectsService.projectsByUserResource.reload();
         this.notificacionStatus.showMessage();
         this.router.navigateByUrl('/proyectos');
         return;

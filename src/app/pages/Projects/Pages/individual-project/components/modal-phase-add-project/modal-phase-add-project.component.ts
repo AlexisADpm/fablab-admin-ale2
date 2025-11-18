@@ -28,7 +28,6 @@ export class ModalPhaseAddProjectComponent {
     "descripcion":["",[Validators.required]]
   });
 
-
   //Metodos
   postAddPhase(){
     if(this.fbAddPhase.invalid || this.loading()){
@@ -42,14 +41,14 @@ export class ModalPhaseAddProjectComponent {
       if(status){
         this.notificacionsStatusService.showMessage();
         this.loading.set(false);
-        this.projectsService.projectsResource.reload();
+        this.projectsService.projectsByUserResource.reload();
         this.closeModalView.emit(false);
 
         return;
       }
       this.notificacionsStatusService.showMessage();
       this.loading.set(false);
-      this.projectsService.projectsResource.reload();
+      this.projectsService.projectsByUserResource.reload();
       this.closeModalView.emit(false);
 
     });

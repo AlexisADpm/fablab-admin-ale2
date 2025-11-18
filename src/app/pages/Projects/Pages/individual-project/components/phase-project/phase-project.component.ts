@@ -34,7 +34,7 @@ export class PhaseProjectComponent {
 
   //Computed para recalcular señal
   projectFound = computed<ProjectsInterface | undefined>(()=>{
-    if(this.projectsService.projectsResource.hasValue()){
+    if(this.projectsService.projectsByUserResource.hasValue()){
       return this.projectsService.searchProjectById(this.projectId()!);
     }
     return;
@@ -73,13 +73,13 @@ export class PhaseProjectComponent {
         this.openDeleteView.set(false);
         this.loading.set(false);
         this.notificacionsStatusService.showMessage();
-        this.projectsService.projectsResource.reload();
+        this.projectsService.projectsByUserResource.reload();
         this.openEditView.set(false);
         return;
       }
       this.loading.set(false);
       this.openDeleteView.set(false);
-      this.projectsService.projectsResource.reload();
+      this.projectsService.projectsByUserResource.reload();
       this.openEditView.set(false);
 
     });
@@ -102,14 +102,14 @@ export class PhaseProjectComponent {
         this.openDeleteView.set(false);
         this.loading.set(false);
         this.notificacionsStatusService.showMessage();
-        this.projectsService.projectsResource.reload();
+        this.projectsService.projectsByUserResource.reload();
         this.openDeleteView.set(false);
 
         return;
       }
       this.loading.set(false);
       this.openDeleteView.set(false);
-      this.projectsService.projectsResource.reload();
+      this.projectsService.projectsByUserResource.reload();
       this.openDeleteView.set(false);
 
     });

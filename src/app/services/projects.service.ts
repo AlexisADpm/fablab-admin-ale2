@@ -127,15 +127,13 @@ export class ProjectsService {
 
   //Buscar proyecto
   searchProjectById(id:number): ProjectsInterface | undefined{
-    console.log(this.projectsData());
-    if(this.projectsData().length == 0){
+    if(this.projectsDataByUser().length == 0){
       return;
     }
-    if(this.projectsData().length == 0){
+    if(this.projectsDataByUser().length == 0){
       return;
     }
-    const projectFound = this.projectsData().find(pro => pro.id == id);
-    console.log(projectFound);
+    const projectFound = this.projectsDataByUser().find(pro => pro.id == id);
     return projectFound;
   }
 
