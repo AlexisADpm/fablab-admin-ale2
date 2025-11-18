@@ -25,9 +25,9 @@ export class NewsService {
   }
 
   //Metodo get news suscrito
-  getNews(): void{
-     if(this.newsLoading()){
-      console.log("La peticion no puede cargar aun...");
+  getNews(): void {
+    if (this.newsLoading()) {
+      console.log('La peticion no puede cargar aun...');
       return;
     }
     this.newsLoading.set(true);
@@ -60,9 +60,8 @@ export class NewsService {
   }
 
   //Creacion de noticia
-  postNew(news: News): Observable<boolean>{
-
-    if(this.postLoading()){
+  postNew(news: News): Observable<boolean> {
+    if (this.postLoading()) {
       return of(false);
     }
     //Cargando
@@ -84,7 +83,6 @@ export class NewsService {
   }
 
   //Eliminacion de noticias
-  //TODO: Vincular a componente
   deleteNew(newsId: number): Observable<boolean> {
     return this.httpclient
       .delete(`${environment.apiKey}/api/noticias/${newsId}`)
