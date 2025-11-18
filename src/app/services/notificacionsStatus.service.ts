@@ -16,6 +16,7 @@ export class NotificacionsStatusService {
     this.timerId = setTimeout(() => {
       this.statusMessage.set(false);
       this.statusTextMessage.set('');
+      this.statusErrorMessage.set('');
       this.timerId = null;
     }, 3000);
   }

@@ -85,8 +85,7 @@ export class newItemInventariComponent implements OnInit {
   submitItemContent() {
     if (this.CreationInventoryForm.invalid) {
       this.CreationInventoryForm.markAllAsTouched();
-      // Notificación de Fallo
-      this.notificacionsStatusService.showMessage();
+
       return;
     }
 
@@ -106,8 +105,15 @@ export class newItemInventariComponent implements OnInit {
 
     this.inventoryService.postNewItem(payload).subscribe((status) => {
       if (status) {
+        this.inventoryService.inventoryResource.reload();
+        this.notificacionsStatusService.showMessage();
         this.router.navigateByUrl('/inventario');
+        return;
       }
+      this.inventoryService.inventoryResource.reload();
+      this.notificacionsStatusService.showMessage();
+      this.router.navigateByUrl('/inventario');
+
     });
   }
 }
