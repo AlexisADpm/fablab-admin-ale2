@@ -6,6 +6,7 @@ import { projectApiToProjectsArray } from '../utils/mappers/projectsMapper';
 import { ProjectsInterface } from '../interfaces/projects.interface';
 import { NotificacionsStatusService } from './notificacionsStatus.service';
 import { ProjectsCreateInterface } from '../utils/request-interfaces/projectsCreateInterface';
+import { environment } from '../../environments/environments';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,7 @@ export class ProjectsService {
 
   getProjects() {
     this.httpClient
-      .get<ProjectsResponse[]>('http://localhost:5263/api/proyectos')
+      .get<ProjectsResponse[]>(`${environment.apiKey}/api/proyectos`)
       .pipe(
         map((projects) => {
           return projectApiToProjectsArray(projects);
@@ -46,7 +47,8 @@ export class ProjectsService {
 
   //Agregar proyecto con id de usuario
   postProject(proyecto: any) {
-    return this.httpClient.post<ProjectsResponse[]>('http://localhost:5263/api/proyectos', proyecto)
+    return this.httpClient
+      .post<ProjectsResponse[]>(`${environment.apiKey}/api/proyectos`, proyecto)
       .pipe(
         map(() => {
           this.notificationStatusService.statusMessage.set(true);
@@ -71,7 +73,7 @@ export class ProjectsService {
 
   deleteProject(id: number) {
     return this.httpClient
-      .delete(`http://localhost:5263/api/proyectos/${id}`)
+      .delete(`${environment.apiKey}/api/proyectos/${id}`)
       .pipe(
         map(() => {
           this.notificationStatusService.statusMessage.set(true);

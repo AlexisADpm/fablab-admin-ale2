@@ -6,40 +6,57 @@ import { catchError, map, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { InventoryResponse } from '../utils/responses-interfaces/inventoryResponse';
 import { inventoryApiToInventoryArray } from '../utils/mappers/inventoryMapper';
+import { environment } from '../../environments/environments';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class InventoryService {
-
   //Servicios
   httpClient = inject(HttpClient);
   notificationStatusService = inject(NotificacionsStatusService);
 
   //Atributos
   inventoryData = signal<InventoryInterface[]>([]);
+  private inventoryUrl = `${environment.apiKey}/api/inventario`;
 
   inventoryResource = rxResource({
-    loader: ()=> {
+    loader: () => {
       return this.getInventoryItems();
-    }
-  })
-
+    },
+  });
 
   //Metodos
 
-  getInventoryItems(): Observable<boolean>{
-    return this.httpClient.get<InventoryResponse[]>(`http://localhost:5263/api/inventario`)
-        .pipe(
-          map((data)=> {
-            this.inventoryData.update((currentData)=> [...currentData, ...inventoryApiToInventoryArray(data)])
-            return true;
-          }),
-          //TODO: Implementar interfaz de error en base a asp net
-          catchError((err)=>{
-            this.notificationStatusService.statusMessage.set(true);
-            this.notificationStatusService.statusErrorMessage.set(err.error.detail);
-            return of(false);
-          })
+  getInventoryItems(): Observable<boolean> {
+    return this.httpClient.get<InventoryResponse[]>(this.inventoryUrl).pipe(
+      map((data) => {
+        this.inventoryData.set(inventoryApiToInventoryArray(data));
+        return true;
+      }),
+      //TODO: Implementar interfaz de error en base a asp net
+      catchError((err) => {
+        this.notificationStatusService.statusMessage.set(true);
+        this.notificationStatusService.statusErrorMessage.set(err.error.detail);
+        return of(false);
+      })
+    );
+  }
+
+  postNewItem(newItem: InventoryInterface): Observable<boolean> {
+    return this.httpClient.post(this.inventoryUrl, newItem).pipe(
+      map(() => {
+        this.notificationStatusService.statusTextMessage.set(
+          'Insumo agregado con éxito.'
         );
+        this.notificationStatusService.statusMessage.set(true);
+        return true;
+      }),
+      catchError((err) => {
+        this.notificationStatusService.statusErrorMessage.set(
+          err.error.detail || 'Error al crear el nuevo ítem.'
+        );
+        this.notificationStatusService.statusMessage.set(true);
+        return of(false);
+      })
+    );
   }
 }
-

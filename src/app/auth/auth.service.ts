@@ -7,6 +7,7 @@ import { rxResource } from '@angular/core/rxjs-interop';
 import { UsersInterface } from '../interfaces/users.interface';
 import { UsersAuthApitoUser } from '../utils/mappers/usersMapper';
 import { tokenGetter } from '../app.config';
+import { environment } from '../../environments/environments';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -18,6 +19,12 @@ export class AuthService {
   private _autentication = signal<boolean>(false);
   userData = signal<UsersInterface | null>(null);
   registerLoader = signal<boolean>(false);
+
+  private baseUrl = `${environment.apiKey}/api/autenticacion/usuarios`;
+
+  constructor() {
+    console.log(this.baseUrl);
+  }
 
   //Getter de autenticacion
   Autentication = computed(() => {
@@ -37,10 +44,7 @@ export class AuthService {
   //Logear usuarios
   loginUser(formLogin: any): Observable<boolean> {
     return this._httpClient
-      .post<TokenJwt>(
-        'http://localhost:5263/api/autenticacion/usuarios/login',
-        formLogin
-      )
+      .post<TokenJwt>(`${this.baseUrl}/login`, formLogin)
       .pipe(
         tap((resp) => {
           console.log(resp);
@@ -59,23 +63,18 @@ export class AuthService {
 
   //Postear usuarios
   registerUser(formRegister: any): Observable<boolean> {
-    return this._httpClient
-      .post(
-        'http://localhost:5263/api/autenticacion/usuarios/registro',
-        formRegister
-      )
-      .pipe(
-        delay(4000),
-        map(() => true),
-        finalize(() => {
-          this.registerLoader.set(false);
-          console.log('Estado carga registro finalizado');
-        }),
-        catchError((err) => {
-          console.log(err);
-          return of(false);
-        })
-      );
+    return this._httpClient.post(`${this.baseUrl}/registro`, formRegister).pipe(
+      delay(4000),
+      map(() => true),
+      finalize(() => {
+        this.registerLoader.set(false);
+        console.log('Estado carga registro finalizado');
+      }),
+      catchError((err) => {
+        console.log(err);
+        return of(false);
+      })
+    );
   }
 
   //Renovar token
@@ -86,23 +85,19 @@ export class AuthService {
       return of(false);
     }
 
-    return this._httpClient
-      .get<TokenJwt>(
-        'http://localhost:5263/api/autenticacion/usuarios/check-status'
-      )
-      .pipe(
-        tap((resp) => {
-          this.userData.set(UsersAuthApitoUser(resp.usuario));
-          this._jwtToken.set(resp);
-          this._autentication.set(true);
-          localStorage.setItem('token', resp.token);
-        }),
-        map((resp) => true),
-        catchError((error) => {
-          console.log(error);
-          return of(false);
-        })
-      );
+    return this._httpClient.get<TokenJwt>(`${this.baseUrl}/check-status`).pipe(
+      tap((resp) => {
+        this.userData.set(UsersAuthApitoUser(resp.usuario));
+        this._jwtToken.set(resp);
+        this._autentication.set(true);
+        localStorage.setItem('token', resp.token);
+      }),
+      map((resp) => true),
+      catchError((error) => {
+        console.log(error);
+        return of(false);
+      })
+    );
   }
 
   //Cerrar sesion

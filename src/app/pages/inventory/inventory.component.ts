@@ -8,6 +8,7 @@ import { PaginationService } from '../../services/pagination.service';
 import { ModalEditComponent } from '../../shared/modal-edit/modal-edit.component';
 import { FooterComponent } from '../../shared/footer/footer';
 import { InventoryService } from '../../services/inventory.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'inventory',
@@ -18,6 +19,7 @@ import { InventoryService } from '../../services/inventory.service';
     PaginationComponent,
     ModalEditComponent,
     FooterComponent,
+    RouterLink,
   ],
   templateUrl: './inventory.component.html',
 })
@@ -53,6 +55,7 @@ export class InventoryComponent {
       const inventoryList = this.inventoryService.inventoryData();
       this.paginationService.setDataList(inventoryList);
       this.paginationService.goToPage(1);
+      this.calcularMetricasYAnimar();
     });
   }
 
@@ -88,7 +91,7 @@ export class InventoryComponent {
   //TODO: Cambiar a idioma ingles
   get bajoStock() {
     // Devolver cuántos insumos están en o por debajo de su stock mínimo
-    return this.inventoryService.inventoryData().filter((p) => p.stock <= 10)
+    return this.inventoryService.inventoryData().filter((p) => p.stock <= 5)
       .length;
   }
 

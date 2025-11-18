@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { notificationsApiToNotificationsArray } from '../utils/mappers/notificationsMapper';
 import { NotificationResponse } from '../utils/responses-interfaces/notificationResponse';
+import { environment } from '../../environments/environments';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class NotificationsService {
-
   //Servicios
   httpClient = inject(HttpClient);
   notificationStatusService = inject(NotificacionsStatusService);
@@ -26,44 +26,51 @@ export class NotificationsService {
   registerNotificationResource = rxResource({
     loader: () => {
       return this.getRegisterNotifications();
-    }
-  })
+    },
+  });
 
   //Metodos
 
   //Notificaciones de ingreso
-  getRegisterNotifications(): Observable<boolean>{
-    return this.httpClient.get<NotificationResponse[]>(`http://localhost:5263/api/notificaciones/ingreso`)
-    .pipe(
-      map((dataNotifications)=> {
-        this.notificationsData.update((data)=> [...data, ...notificationsApiToNotificationsArray(dataNotifications)]);
-        return true;
-      }),
-      //TODO: Implementar interfaz de error en base a asp net
-      catchError((err)=>{
-        this.notificationStatusService.statusMessage.set(true);
-        this.notificationStatusService.statusErrorMessage.set(err.error.detail);
-        return of(false);
-      })
-    );
+  getRegisterNotifications(): Observable<boolean> {
+    return this.httpClient
+      .get<NotificationResponse[]>(
+        `${environment.apiKey}/api/notificaciones/ingreso`
+      )
+      .pipe(
+        map((dataNotifications) => {
+          this.notificationsData.update((data) => [
+            ...data,
+            ...notificationsApiToNotificationsArray(dataNotifications),
+          ]);
+          return true;
+        }),
+        //TODO: Implementar interfaz de error en base a asp net
+        catchError((err) => {
+          this.notificationStatusService.statusMessage.set(true);
+          this.notificationStatusService.statusErrorMessage.set(
+            err.error.detail
+          );
+          return of(false);
+        })
+      );
   }
 
-  postRegisterNotification(id:number): Observable<boolean>{
-    return this.httpClient.post(`http://localhost:5263/api/notificaciones/ingreso/${id}`,{})
-    .pipe(
-      map(()=> {
-        return true;
-      }),
-      //TODO: Implementar interfaz de error en base a asp net
-      catchError((err)=>{
-        this.notificationStatusService.statusMessage.set(true);
-        this.notificationStatusService.statusErrorMessage.set(err.error.detail);
-        return of(false);
-      })
-    );
-
+  postRegisterNotification(id: number): Observable<boolean> {
+    return this.httpClient
+      .post(`${environment.apiKey}/api/notificaciones/ingreso/${id}`, {})
+      .pipe(
+        map(() => {
+          return true;
+        }),
+        //TODO: Implementar interfaz de error en base a asp net
+        catchError((err) => {
+          this.notificationStatusService.statusMessage.set(true);
+          this.notificationStatusService.statusErrorMessage.set(
+            err.error.detail
+          );
+          return of(false);
+        })
+      );
   }
-
-
 }
-
