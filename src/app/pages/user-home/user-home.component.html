@@ -1,7 +1,11 @@
 @if(notificacionsStatusService.statusMessage()){
-<status-message></status-message>
-} @if (isNewsModalOpen() && selectedNews()) {
-<news-reader [newsItem]="selectedNews()!" (close)="closeNewsModal()" />
+  <div class="fixed mb-2 mr-2 right-0 bottom-0">
+    <status-message></status-message>
+  </div>
+}
+
+@if (isNewsModalOpen() && selectedNews()) {
+  <news-reader [newsItem]="selectedNews()!" (close)="closeNewsModal()" />
 }
 
 <div class="space-y-8">
