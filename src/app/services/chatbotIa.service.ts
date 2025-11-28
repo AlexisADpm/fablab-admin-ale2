@@ -18,7 +18,7 @@ export class ChatBotIAService {
     this.loadingMessage.set(true)
 
 
-    return this.httpclient.post<ChatIAResponseInterface>("http://localhost:5263/api/chatia",question).pipe(
+    return this.httpclient.post<ChatIAResponseInterface>("https://fablabwebapi20251104221404-crbeb0b9cafvhqg3.canadacentral-01.azurewebsites.net/api/chatia",question).pipe(
       map((response)=> {
         return response;
       }),

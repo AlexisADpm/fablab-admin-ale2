@@ -18,7 +18,7 @@ export class GraphicsService {
 
 
   getGraphicsProjectsByUser(): Observable<ProjectsByUser>{
-    return this.httpClient.get<ProjectsByUser>(`http://localhost:5263/api/graficos/proyectoporusuario`)
+    return this.httpClient.get<ProjectsByUser>(`https://fablabwebapi20251104221404-crbeb0b9cafvhqg3.canadacentral-01.azurewebsites.net/api/graficos/proyectoporusuario`)
     .pipe(
       map((data)=> {
         return data;

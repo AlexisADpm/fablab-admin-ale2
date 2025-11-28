@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectsService } from '../../../../services/projects.service';
 import { BackButtonComponent } from '../../../../shared/back-button/back-button';
 import { ProjectsInterface } from '../../../../interfaces/projects.interface';
+import { AuthService } from '../../../../auth/auth.service';
 
 // Nota: Tipificación necesaria para que el payload sea correcto
 interface ProjectForm {
@@ -36,6 +37,7 @@ export class EditProjectComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private projectsService = inject(ProjectsService);
+  private authService = inject(AuthService);
 
   // ================================================================
   // 2. VARIABLES DE ESTADO
@@ -106,11 +108,9 @@ export class EditProjectComponent implements OnInit {
       .find((p) => p.id === id);
 
     if (projectToEdit) {
-      // 🚨 CORRECCIÓN CLAVE: Formatear la fecha para input type="date" 🚨
       const apiDate = projectToEdit.fechainicio;
       let formattedDate = '';
 
-      // Se asume formato ISO 8601 (2025-11-27T00:00:00). El input date necesita YYYY-MM-DD
       if (typeof apiDate === 'string' && apiDate) {
         formattedDate = apiDate.split('T')[0];
       }
@@ -146,24 +146,14 @@ export class EditProjectComponent implements OnInit {
 
     // Obtenemos los datos limpios del formulario (incluye el ID)
     const updatedPayload = this.newProjectForm.getRawValue();
-    console.log(
-      '📦 [submitUpdateProject] Payload preparado para enviar:',
-      updatedPayload
-    );
 
-    this.projectsService.putProject(this.projectId!, updatedPayload).subscribe({
-      next: (success) => {
-        if (success) {
-          this.router.navigate(['/proyectos', this.projectId]);
-        } else {
+    this.projectsService.putProject(this.projectId!, updatedPayload).subscribe((status)=> {
+      if(status){
+        if(this.authService.userData()?.rolId == 1){
+          return;
         }
-      },
-      error: (err) => {
-        console.error(
-          '💥 [SUBSCRIBE ERROR] Ocurrió un error en la petición HTTP:',
-          err
-        );
-      },
+
+      }
     });
   }
 }

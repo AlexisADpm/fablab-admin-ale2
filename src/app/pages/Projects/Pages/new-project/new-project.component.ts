@@ -54,8 +54,6 @@ export class NewProjectComponent {
 
     this.loading.set(true);
 
-
-
     //Creacion de proyecto
     const newProject: ProjectsCreateInterface = this.newProjectForm.value;
     newProject.ids = [this.authService.userData()!.id_usuario!];
