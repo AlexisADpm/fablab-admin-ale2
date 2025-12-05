@@ -35,6 +35,11 @@
           class="w-full h-11 px-4 border border-fablab-border rounded-md focus:outline-none focus:ring-2 focus:ring-fablab-primary text-fablab-text-primary bg-fablab-bg transition"
           formControlName="email"
         />
+        @if(CustomFormsValidations.ValidateErrors("email",fbLogin)){
+        <span class="text-red-500">
+          {{ CustomFormsValidations.ValidateErrors("email", fbLogin) }}
+        </span>
+        }
       </div>
 
       <div>
@@ -52,13 +57,19 @@
           class="w-full h-11 px-4 text-fablab-text-primary border border-fablab-border rounded-md focus:outline-none focus:ring-2 focus:ring-fablab-primary bg-fablab-bg transition"
           formControlName="contrasena"
         />
-        <!-- <div class="text-right mt-1">
+        @if(CustomFormsValidations.ValidateErrors("contrasena",fbLogin)){
+        <span class="text-red-500">
+          {{ CustomFormsValidations.ValidateErrors("contrasena", fbLogin) }}
+        </span>
+        }
+        <div class="text-right mt-1">
           <a
             class="text-fablab-text-primary text-sm hover:underline cursor-pointer"
           >
             ¿Olvidaste tu contraseña?
           </a>
-        </div> -->
+        </div>
+        -->
       </div>
 
       @if(authService.loginLoader()){
