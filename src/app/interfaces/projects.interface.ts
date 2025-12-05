@@ -6,7 +6,8 @@ export interface ProjectsInterface {
   categoria: string;
   descripcionproyecto: string;
   fechainicio: Date | string;
-  areaaplicacion: string
+  areaaplicacion: string;
+  estado: string;
   imgurl?: string;
   hitoproyecto: HitoProyecto[];
 }

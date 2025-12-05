@@ -1,7 +1,9 @@
-import { Component, computed, effect, ElementRef, inject, OnInit, viewChild } from '@angular/core';
+import { Component, computed, effect, ElementRef, inject, OnInit, signal, viewChild } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { GraphicsService } from '../../../../services/graphics.service';
 import { ProjectsByUser } from '../../../../interfaces/graphicsInterfaces/projectsByUser.interface';
+import { NotificacionsStatusService } from '../../../../services/notificacionsStatus.service';
+import { StatusMessageComponent } from '../../../../shared/status-message/status-message.component';
 
 Chart.register(...registerables);
 
@@ -16,29 +18,44 @@ const GRID_COLOR = 'rgba(100, 100, 100, 0.2)'; // Líneas muy sutiles
 @Component({
   selector: 'charts',
   templateUrl: './charts.html',
+  imports:[StatusMessageComponent]
 })
-export class Charts implements OnInit {
+export class Charts{
 
   //Servicios
   graphicsService = inject(GraphicsService);
+  notificacionsStatusService = inject(NotificacionsStatusService);
 
   //Atributos
-  dataLabelsData = computed< ProjectsByUser>(()=>{
-    if(this.graphicsService.graphicsResource.hasValue()){
-      return this.graphicsService.graphicsResource.value();
+  loadingData = signal<boolean>(false);
+
+
+  dataLabelsData = computed<ProjectsByUser>(()=>{
+    if(this.graphicsService.graphicsResourcePBM.hasValue()){
+      return this.graphicsService.graphicsResourcePBM.value();
     }
     return {labelsNombres:[],proyectosCuenta:[]};
   });
 
+  dataLabelData2 = computed<Array<number> | undefined>(()=>{
+    if(this.graphicsService.graphicsResourcePBM.hasValue()){
+      return this.graphicsService.graphicsResourcePPF.value();
+    }
+    return [];
+  });
+
   canvasProyectosPorUsuario = viewChild<ElementRef<HTMLCanvasElement>>('proyectosPorUsuarioChart');
+  canvasProyectosPorFecha = viewChild<ElementRef<HTMLCanvasElement>>('proyectosPorFechaChart');
+
 
 
   //Metodos
   // ===========================
   // GRÁFICO 1: PROYECTOS POR MES (Línea)
   // ===========================
-  public proyectosData = {
-    labels: [
+  public proyectosDataPorMes = computed(()=>{
+    return {
+      labels: [
       'Enero',
       'Febrero',
       'Marzo',
@@ -55,7 +72,7 @@ export class Charts implements OnInit {
     datasets: [
       {
         label: 'Cantidad de Proyectos',
-        data: [5, 8, 12, 6, 9, 15, 10, 7, 13, 11, 14, 16],
+        data: this.dataLabelData2(),
         fill: true, // Cambié a true para una mejor visualización del área
         // 🚨 COLOR LÍNEA: Amarillo FabLab Sólido
         borderColor: `rgba(${FABLAB_R}, ${FABLAB_G}, ${FABLAB_B}, 1)`,
@@ -68,55 +85,19 @@ export class Charts implements OnInit {
         pointHoverRadius: 7,
       },
     ],
-  };
 
-  public proyectosConfig: any = {
-    type: 'line',
-    data: this.proyectosData,
-    options: this.baseOptions('Cantidad de Proyectos'),
-  };
+    }
+  })
 
-  // ===========================
-  // GRÁFICO 2: USUARIOS ACTIVOS POR MES (Línea)
-  // ===========================
-  public usuariosData = {
-    labels: [
-      'Enero',
-      'Febrero',
-      'Marzo',
-      'Abril',
-      'Mayo',
-      'Junio',
-      'Julio',
-      'Agosto',
-      'Septiembre',
-      'Octubre',
-      'Noviembre',
-      'Diciembre',
-    ],
-    datasets: [
-      {
-        label: 'Usuarios Activos',
-        data: [15, 20, 25, 18, 22, 30, 28, 24, 32, 29, 35, 40],
-        fill: true,
-        // 🚨 COLOR LÍNEA: Amarillo FabLab Sólido
-        borderColor: `rgba(${FABLAB_R}, ${FABLAB_G}, ${FABLAB_B}, 1)`,
-        // 🚨 COLOR FONDO: Amarillo FabLab Transparente
-        backgroundColor: `rgba(${FABLAB_R}, ${FABLAB_G}, ${FABLAB_B}, 0.2)`,
-        tension: 0.4,
-        pointBackgroundColor: `rgba(${FABLAB_R}, ${FABLAB_G}, ${FABLAB_B}, 1)`,
-        pointBorderColor: 'white',
-        pointRadius: 5,
-        pointHoverRadius: 7,
-      },
-    ],
-  };
+  public proyectosPorMesConfig= computed(()=>{
+    return{
+        type: 'line',
+        data: this.proyectosDataPorMes(),
+        options: this.baseOptions('Cantidad de Proyectos por mes'),
+    }
+  });
 
-  public usuariosConfig: any = {
-    type: 'line',
-    data: this.usuariosData,
-    options: this.baseOptions('Usuarios Activos'),
-  };
+
 
   // ===========================
   // GRÁFICO 3: PROYECTOS POR USUARIO (Barras)
@@ -224,33 +205,43 @@ export class Charts implements OnInit {
     effect((onCleanup) => {
       // 1. Lee la config (como ya lo hacías)
       const config = this.proyectosPorUsuarioConfig();
+      const config2 = this.proyectosPorMesConfig();
+
 
       // 2. Lee el signal del canvas
       const canvasEl = this.canvasProyectosPorUsuario();
+      const canvasEl2 = this.canvasProyectosPorFecha();
+
 
       // 3. Si el canvas ya existe en el DOM...
       if (canvasEl) {
         // ...crea el gráfico
         const chart = new Chart(canvasEl.nativeElement, config as any);
+        const chart2 = new Chart(canvasEl2!.nativeElement, config2 as any);
+
 
         // 4. Registra una "limpieza"
         // Esto se ejecuta ANTES de que el effect corra de nuevo,
         // o cuando el componente se destruye.
         onCleanup(() => {
           chart.destroy(); // Destruye el gráfico anterior
+          chart2.destroy();
         });
       }
     });
   }
 
+  //Metodos
+  loadPPUData(){
+    if(this.loadingData()){
+      return;
+    }
+    this.loadingData.set(true);
 
-
-
-  // ===========================
-  // INICIALIZACIÓN DE TODOS LOS GRÁFICOS
-  // ===========================
-  ngOnInit(): void {
-    new Chart('proyectosChart', this.proyectosConfig);
-    new Chart('usuariosChart', this.usuariosConfig);
+    this.graphicsService.loadCsvFromPBU().subscribe(()=>{
+      this.loadingData.set(false);
+      this.notificacionsStatusService.showMessage();
+    })
   }
+
 }
