@@ -39,6 +39,7 @@ export class ProjectUpdateComponent implements OnInit {
       descripcion: data.get('descripcion'),
       fecha: new Date().toISOString(),
       imagenUrl: '',
+      estado:''
     };
 
     const archivo = data.get('imagen') as File;

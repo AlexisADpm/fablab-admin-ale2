@@ -85,6 +85,22 @@
       />
     </div>
 
+    <div>
+      <label
+        for="content"
+        class="block text-sm font-medium text-fablab-text-light"
+      >
+        Estado
+      </label>
+      <select class="select" formControlName="estado">
+        <option disabled selected>Escoge un estado</option>
+        <option value="Finalizado">Finalizado</option>
+        <option value="En proceso">En proceso</option>
+      </select>
+    </div>
+
+
+
     @if(loading()){
       <div class="flex justify-end pt-6">
         <button

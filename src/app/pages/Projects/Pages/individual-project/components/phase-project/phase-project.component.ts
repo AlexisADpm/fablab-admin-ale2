@@ -47,19 +47,15 @@ export class PhaseProjectComponent {
   });
 
 
-  //Ciclos de vida
-  ngOnInit() {
-  }
 
 
   //Metodos
-
-
   //Actualizar la fase de un proyecto
   putPhase(dataForm: FormGroup){
     this.fbPhase.patchValue(dataForm);
+    const projectStatus = this.checkProjectStatus();
 
-    if(this.fbPhase.invalid || this.loading() || !dataForm){
+    if(this.fbPhase.invalid || this.loading() || !dataForm || projectStatus){
       return;
     }
 
@@ -83,7 +79,10 @@ export class PhaseProjectComponent {
 
   //Eliminar la fase de un proyecto
   deletePhase(){
-    if(!this.phaseId() || this.loading()){
+
+    const projectStatus = this.checkProjectStatus();
+
+    if(!this.phaseId() || this.loading() || projectStatus){
       return;
     }
 
@@ -108,6 +107,17 @@ export class PhaseProjectComponent {
 
     });
   }
+
+  //Comprobar estado proyecto
+  checkProjectStatus(): boolean{
+    if(this.projectFound()?.estado == "Finalizado"){
+      return true;
+    }
+    return false;
+  }
+
+
+
 
   //Abrir modales
   modalDeleteView(id: number) {

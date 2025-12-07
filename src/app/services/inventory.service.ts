@@ -63,7 +63,10 @@ export class InventoryService {
   //TODO: Pasar a interfaz la data
   putInventoryitem(data: any, id: number): Observable<boolean> {
     return this.httpClient
-      .put<InventoryResponse[]>(`${this.inventoryUrl}/${id}`, data)
+      .put<InventoryResponse[]>(
+        `${this.inventoryUrl}/${id}`,
+        data
+      )
       .pipe(
         map((data) => {
           this.notificationStatusService.statusMessage.set(true);

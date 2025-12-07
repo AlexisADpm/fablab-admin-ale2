@@ -99,6 +99,7 @@ export class EditProjectComponent implements OnInit {
       categoria: ['', Validators.required],
       areaaplicacion: ['', Validators.required],
       fechainicio: ['', Validators.required],
+      estado: ['']
     });
   }
 
@@ -128,7 +129,7 @@ export class EditProjectComponent implements OnInit {
         descripcionproyecto: projectToEdit.descripcionproyecto,
         categoria: projectToEdit.categoria,
         areaaplicacion: projectToEdit.areaaplicacion,
-
+        estado: projectToEdit.estado,
         fechainicio: formattedDate,
       });
     } else {

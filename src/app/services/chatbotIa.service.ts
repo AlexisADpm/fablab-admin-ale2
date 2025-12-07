@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { catchError, finalize, map, Observable, of } from 'rxjs';
 import { ChatIAResponseInterface } from '../utils/responses-interfaces/chatIAResponse';
+import { environment } from '../../environments/environments';
 
 @Injectable({providedIn: 'root'})
 export class ChatBotIAService {
@@ -18,7 +19,7 @@ export class ChatBotIAService {
     this.loadingMessage.set(true)
 
 
-    return this.httpclient.post<ChatIAResponseInterface>("https://fablabwebapi20251104221404-crbeb0b9cafvhqg3.canadacentral-01.azurewebsites.net/api/chatia",question).pipe(
+    return this.httpclient.post<ChatIAResponseInterface>(`${environment.apiKey}/api/chatia`,question).pipe(
       map((response)=> {
         return response;
       }),

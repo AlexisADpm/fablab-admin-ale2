@@ -10,6 +10,7 @@ export interface ProjectsResponse {
   areaAplicacion:      string;
   fechaInicio:         Date;
   imgUrl:              string;
+  estado:              string;
   usuarios: UsersInterface[];
   hitoProyecto: HitoProyecto[];
 }
